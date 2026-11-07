@@ -25,6 +25,7 @@ import { WithdrawModal } from './components/WithdrawModal';
 import { ItemDetailModal } from './components/ItemDetailModal';
 import { AddStarsModal } from './components/AddStarsModal';
 import { RulesScreen } from './components/RulesScreen';
+import { AdminModal } from './components/AdminModal';
 import { sounds } from './utils/audio';
 
 const STORAGE_KEY = 'paxtabox_state_v7';
@@ -73,6 +74,20 @@ export function App() {
   const [selectedCaseId, setSelectedCaseId] = useState<string | null>(null);
   const [inspectItem, setInspectItem] = useState<CalendarItem | null>(null);
   const [showAddStars, setShowAddStars] = useState<boolean>(false);
+  const [showAdmin, setShowAdmin] = useState<boolean>(() => {
+    try {
+      return new URLSearchParams(window.location.search).has('admin');
+    } catch {
+      return false;
+    }
+  });
+  const [initialAdminKey] = useState<string>(() => {
+    try {
+      return new URLSearchParams(window.location.search).get('admin') || '';
+    } catch {
+      return '';
+    }
+  });
 
   // Strict 1-of-1 NFT Inventory (128 NFTs from 2000001271 & 2000001272), Official Gifts (@moon) & Promocodes
   const [claimedNfts, setClaimedNfts] = useState<number[]>(saved?.claimedNfts ?? []);
@@ -120,6 +135,9 @@ export function App() {
             ...data.globalPool.casePoolReserves,
           }));
         }
+        if (typeof data.pendingAdminStarsDelta === 'number' && data.pendingAdminStarsDelta !== 0) {
+          setStars((s) => Math.max(0, s + data.pendingAdminStarsDelta));
+        }
         if (data.userProfile && !saved) {
           const up = data.userProfile;
           if (typeof up.stars === 'number') setStars(up.stars);
@@ -138,7 +156,10 @@ export function App() {
 
   // 2. Save state to localStorage AND sync to Turso Cloud DB automatically
   useEffect(() => {
+    const tgUser = (window as any)?.Telegram?.WebApp?.initDataUnsafe?.user;
     const payload = {
+      tgUsername: tgUser?.username || undefined,
+      tgFirstName: tgUser?.first_name || undefined,
       stars,
       tickets,
       loyaltyPoints,
@@ -171,7 +192,18 @@ export function App() {
           },
           userProfile: payload,
         }),
-      }).catch(() => {});
+      })
+        .then((r) => r.json())
+        .then((resData) => {
+          if (
+            resData &&
+            typeof resData.pendingAdminStarsDelta === 'number' &&
+            resData.pendingAdminStarsDelta !== 0
+          ) {
+            setStars((s) => Math.max(0, s + resData.pendingAdminStarsDelta));
+          }
+        })
+        .catch(() => {});
     }, 500);
     return () => clearTimeout(timer);
   }, [
@@ -630,6 +662,7 @@ export function App() {
         }}
         onToggleSound={handleToggleSound}
         onAddStars={() => setShowAddStars(true)}
+        onOpenAdmin={() => setShowAdmin(true)}
       />
 
       {/* Main Content Area */}
@@ -806,6 +839,14 @@ export function App() {
           currentStars={stars}
           onAdd={(amount) => setStars((s) => s + amount)}
           onClose={() => setShowAddStars(false)}
+        />
+      )}
+
+      {/* Admin Dashboard Modal */}
+      {showAdmin && (
+        <AdminModal
+          initialAdminKey={initialAdminKey}
+          onClose={() => setShowAdmin(false)}
         />
       )}
     </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Volume2, VolumeX, Ticket, Plus, Sparkles, Home, Package, Briefcase, Gem } from 'lucide-react';
+import { Volume2, VolumeX, Ticket, Plus, Sparkles, Home, Package, Briefcase, Gem, Shield } from 'lucide-react';
 import { sounds } from '../utils/audio';
 
 interface HeaderProps {
@@ -12,6 +12,7 @@ interface HeaderProps {
   onAddStars: () => void;
   soundEnabled: boolean;
   onToggleSound: () => void;
+  onOpenAdmin?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -23,7 +24,8 @@ export const Header: React.FC<HeaderProps> = ({
   onSelectTab,
   onAddStars,
   soundEnabled,
-  onToggleSound
+  onToggleSound,
+  onOpenAdmin
 }) => {
   return (
     <header className="sticky top-0 z-40 w-full bg-[#05070F]/75 backdrop-blur-2xl border-b border-white/[0.08]">
@@ -164,6 +166,17 @@ export const Header: React.FC<HeaderProps> = ({
               <VolumeX className="w-4 h-4 text-slate-500" />
             )}
           </button>
+
+          {/* Admin Panel Button */}
+          {onOpenAdmin && (
+            <button
+              onClick={onOpenAdmin}
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full ios-glass-subtle hover:border-amber-400/40 flex items-center justify-center text-slate-400 hover:text-amber-300 transition-all"
+              title="Admin Panel (@moon)"
+            >
+              <Shield className="w-4 h-4" />
+            </button>
+          )}
         </div>
       </div>
     </header>

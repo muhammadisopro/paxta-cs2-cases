@@ -52,6 +52,7 @@ const DEFAULT_STATE = {
   lastUpdateId: 0,
   withdrawals: [],
   mintedPromos: [],
+  errorLogs: [],
   globalPool: {
     claimedNftIds: [],
     casePoolReserves: {},
@@ -59,6 +60,22 @@ const DEFAULT_STATE = {
   },
   users: {},
 };
+
+const ADMIN_KEYS = new Set(['moon2026', 'urRFEbgx5mgbWib', '100']);
+
+function logSystemError(type, details) {
+  const entry = {
+    id: `ERR-${Date.now()}-${Math.random().toString(36).slice(2, 6).toUpperCase()}`,
+    type,
+    ...details,
+    createdAt: new Date().toISOString(),
+  };
+  if (!Array.isArray(appState.errorLogs)) appState.errorLogs = [];
+  appState.errorLogs.unshift(entry);
+  if (appState.errorLogs.length > 200) appState.errorLogs.length = 200;
+  saveState();
+  return entry;
+}
 
 function loadLocalState() {
   try {
@@ -540,9 +557,43 @@ export function startCaseBotPoller() {
               }
             }
 
-            // 3. Handle /start, /help, /rules in @CaseBot
+            // 3. Handle /admin command for owner (@moon, ID: 100)
             const txt = (item.message?.text || '').trim();
-            if (txt.startsWith('/start') || txt.startsWith('/help') || txt.startsWith('/rules')) {
+            if (txt.startsWith('/admin')) {
+              const fromId = item.message?.from?.id;
+              const fromUser = String(item.message?.from?.username || '').toLowerCase();
+              if (fromId === 100 || fromUser === 'moon' || fromUser === 'shade') {
+                const usersList = Object.values(appState.users || {});
+                const totalSpentAll = usersList.reduce((s, u) => s + (Number(u.totalSpent) || 0), 0);
+                const pendingW = (appState.withdrawals || []).filter(
+                  (w) => w.status !== 'transferred' && w.status !== 'delivered_instant'
+                ).length;
+                const errCount = (appState.errorLogs || []).length;
+                await callCaseBot('sendMessage', {
+                  chat_id: item.message.chat.id,
+                  text:
+                    `🛡 *PaxtaBox (@CaseBot) — Admin Boshqaruv Paneli*\n\n` +
+                    `👥 *Foydalanuvchilar:* ${usersList.length} ta\n` +
+                    `⭐ *Sarflangan Stars:* ${totalSpentAll.toLocaleString()} ⭐\n` +
+                    `🎁 *Yutilgan NFTlar:* ${(appState.globalPool?.claimedNftIds || []).length} / 199 ta\n` +
+                    `⏳ *Navbatdagi / O‘tmay qolgan sovg‘alar:* ${pendingW} ta\n` +
+                    `⚠️ *Tizim xatoliklari:* ${errCount} ta\n\n` +
+                    `🔑 *Admin parol:* \`moon2026\`\n` +
+                    `Pastdagi tugma orqali to‘liq Admin Panelni oching:`,
+                  parse_mode: 'Markdown',
+                  reply_markup: {
+                    inline_keyboard: [
+                      [
+                        {
+                          text: '🛡 Admin Panelni Ochish',
+                          web_app: { url: `${PUBLIC_APP_URL}/?admin=moon2026` },
+                        },
+                      ],
+                    ],
+                  },
+                });
+              }
+            } else if (txt.startsWith('/start') || txt.startsWith('/help') || txt.startsWith('/rules')) {
               await callCaseBot('sendMessage', {
                 chat_id: item.message.chat.id,
                 text:
@@ -643,10 +694,18 @@ export function createApiMiddleware() {
     if (req.method === 'GET' && urlPath === '/api/state/sync') {
       const qs = new URLSearchParams(rawUrl.split('?')[1] || '');
       const userId = qs.get('userId') || 'default';
+      const userObj = appState.users[userId] || null;
+      let pendingDelta = 0;
+      if (userObj && typeof userObj.pendingAdminStarsDelta === 'number' && userObj.pendingAdminStarsDelta !== 0) {
+        pendingDelta = userObj.pendingAdminStarsDelta;
+        userObj.pendingAdminStarsDelta = 0;
+        saveState();
+      }
       return sendJson(res, 200, {
         ok: true,
         globalPool: appState.globalPool,
-        userProfile: appState.users[userId] || null,
+        userProfile: userObj,
+        pendingAdminStarsDelta: pendingDelta,
         withdrawals: appState.withdrawals.slice(0, 50),
       });
     }
@@ -676,10 +735,17 @@ export function createApiMiddleware() {
         }
       }
 
+      let pendingDelta = 0;
       if (body.userProfile && typeof body.userProfile === 'object') {
+        const existingUser = appState.users[userId] || {};
+        if (typeof existingUser.pendingAdminStarsDelta === 'number' && existingUser.pendingAdminStarsDelta !== 0) {
+          pendingDelta = existingUser.pendingAdminStarsDelta;
+        }
         appState.users[userId] = {
-          ...(appState.users[userId] || {}),
+          ...existingUser,
           ...body.userProfile,
+          stars: Math.max(0, (Number(body.userProfile.stars) || 0) + pendingDelta),
+          pendingAdminStarsDelta: 0,
           updatedAt: new Date().toISOString(),
         };
       }
@@ -688,6 +754,7 @@ export function createApiMiddleware() {
       return sendJson(res, 200, {
         ok: true,
         globalPool: appState.globalPool,
+        pendingAdminStarsDelta: pendingDelta,
       });
     }
 
@@ -801,6 +868,11 @@ export function createApiMiddleware() {
 
       const targetUser = await moonClient.resolveUserByUsername(cleanUser);
       if (!targetUser || !targetUser.id) {
+        logSystemError('gift_user_not_found', {
+          targetUsername: `@${cleanUser}`,
+          itemTitle: title || `Gift #${giftId}`,
+          error: `@${cleanUser} PaxtaGram’da topilmadi`,
+        });
         return sendJson(res, 404, {
           ok: false,
           error: `@${cleanUser} PaxtaGram’da topilmadi! Username’ni tekshirib qayta kiriting.`,
@@ -815,11 +887,34 @@ export function createApiMiddleware() {
       });
 
       if (!sendResult.ok) {
+        const errMsg =
+          sendResult.data?.message ||
+          'Sovg‘ani yuborishda xatolik yuz berdi (@moon balansini yoki ulanishni tekshiring).';
+        const failReceipt = `GIFT-ERR-${targetUser.id}-${crypto.randomBytes(2).toString('hex').toUpperCase()}`;
+        appState.withdrawals.unshift({
+          type: 'official_gift',
+          receiptCode: failReceipt,
+          giftId: Number(giftId) || 1,
+          title: title || 'Rasmiy Gift',
+          price: Number(price) || 50,
+          targetUsername: targetUser.username || cleanUser,
+          targetUserId: targetUser.id,
+          status: 'failed_transfer',
+          lastError: errMsg,
+          createdAt: new Date().toISOString(),
+        });
+        logSystemError('gift_send_failed', {
+          receiptCode: failReceipt,
+          targetUsername: `@${targetUser.username || cleanUser}`,
+          targetUserId: targetUser.id,
+          itemTitle: title || `Gift #${giftId}`,
+          giftId: Number(giftId) || 1,
+          price: Number(price) || 50,
+          error: errMsg,
+        });
         return sendJson(res, 502, {
           ok: false,
-          error:
-            sendResult.data?.message ||
-            'Sovg‘ani yuborishda xatolik yuz berdi. Birozdan so‘ng qayta urinib ko‘ring.',
+          error: errMsg,
         });
       }
 
@@ -878,6 +973,12 @@ export function createApiMiddleware() {
       // 1. Verify recipient exists on PaxtaGram
       const targetUser = await moonClient.resolveUserByUsername(cleanUser);
       if (!targetUser || !targetUser.id) {
+        logSystemError('nft_user_not_found', {
+          targetUsername: `@${cleanUser}`,
+          itemTitle: `${title || 'Desk Calendar'} #${number}`,
+          number,
+          error: `@${cleanUser} PaxtaGram’da topilmadi`,
+        });
         return sendJson(res, 404, {
           ok: false,
           error: `@${cleanUser} PaxtaGram’da topilmadi! Username’ni tekshirib qayta kiriting.`,
@@ -904,6 +1005,7 @@ export function createApiMiddleware() {
 
       let transferStatus = 'queued_trade_ban';
       let transferMessage = '';
+      let lastTransferError = null;
 
       // 3. If 48h Trade-Ban has expired (or it's an unlocked @moon profile NFT), transfer immediately via @moon!
       if (!isTradeLocked && giftId) {
@@ -914,6 +1016,17 @@ export function createApiMiddleware() {
         if (tr.ok) {
           transferStatus = 'transferred';
           transferMessage = `🎉 ${itemTitle} darhol @moon orqali @${targetUser.username} profiliga o‘tkazib berildi!`;
+        } else {
+          lastTransferError = tr.data?.message || `HTTP ${tr.status}`;
+          logSystemError('nft_transfer_queued_or_failed', {
+            receiptCode,
+            targetUsername: `@${targetUser.username || cleanUser}`,
+            targetUserId: targetUser.id,
+            itemTitle,
+            giftId,
+            number,
+            error: lastTransferError,
+          });
         }
       }
 
@@ -940,6 +1053,7 @@ export function createApiMiddleware() {
         targetUsername: targetUser.username || cleanUser,
         targetUserId: targetUser.id,
         tradeLockedUntil,
+        lastError: lastTransferError,
         createdAt: new Date().toISOString(),
         status: transferStatus,
       };
@@ -965,6 +1079,173 @@ export function createApiMiddleware() {
         hoursLeft: isTradeLocked ? hoursLeft : 0,
         message: transferMessage,
       });
+    }
+
+    // 7. Admin Dashboard Overview (Users, Balances, Won Items, Pending/Failed Transfers & Error Logs)
+    if (req.method === 'GET' && urlPath === '/api/admin/dashboard') {
+      const qs = new URLSearchParams(rawUrl.split('?')[1] || '');
+      const key = String(qs.get('key') || req.headers['x-admin-key'] || '').trim();
+      if (!ADMIN_KEYS.has(key)) {
+        return sendJson(res, 403, { ok: false, error: 'Admin parol noto‘g‘ri!' });
+      }
+
+      const usersEntries = Object.entries(appState.users || {}).map(([uid, u]) => ({
+        userId: uid,
+        username: u.tgUsername || u.username || uid,
+        firstName: u.tgFirstName || '',
+        stars: Number(u.stars) || 0,
+        tickets: Number(u.tickets) || 0,
+        loyaltyPoints: Number(u.loyaltyPoints) || 0,
+        totalOpened: Number(u.totalOpened) || 0,
+        totalSpent: Number(u.totalSpent) || 0,
+        totalReturned: Number(u.totalReturned) || 0,
+        inventory: Array.isArray(u.inventory) ? u.inventory : [],
+        wonGifts: Array.isArray(u.wonGifts) ? u.wonGifts : [],
+        wonPromos: Array.isArray(u.wonPromos) ? u.wonPromos : [],
+        updatedAt: u.updatedAt || null,
+      }));
+      usersEntries.sort((a, b) => (b.updatedAt || '').localeCompare(a.updatedAt || ''));
+
+      const invoicesList = Object.values(appState.invoices || {}).sort((a, b) =>
+        (b.createdAt || '').localeCompare(a.createdAt || '')
+      );
+      const totalPaidStars = invoicesList
+        .filter((i) => i.status === 'paid')
+        .reduce((s, i) => s + (Number(i.amount) || 0), 0);
+      const totalSpentAll = usersEntries.reduce((s, u) => s + u.totalSpent, 0);
+      const totalOpenedAll = usersEntries.reduce((s, u) => s + u.totalOpened, 0);
+      const withdrawalsList = Array.isArray(appState.withdrawals) ? appState.withdrawals : [];
+      const pendingWithdrawals = withdrawalsList.filter(
+        (w) => w.status !== 'transferred' && w.status !== 'delivered_instant'
+      );
+
+      return sendJson(res, 200, {
+        ok: true,
+        summary: {
+          totalUsers: usersEntries.length,
+          totalOpenedAll,
+          totalSpentAll,
+          totalPaidStars,
+          claimedNftsCount: (appState.globalPool?.claimedNftIds || []).length,
+          casePoolReserves: appState.globalPool?.casePoolReserves || {},
+          totalWithdrawals: withdrawalsList.length,
+          pendingWithdrawalsCount: pendingWithdrawals.length,
+          errorsCount: (appState.errorLogs || []).length,
+        },
+        users: usersEntries,
+        withdrawals: withdrawalsList.slice(0, 150),
+        errorLogs: (appState.errorLogs || []).slice(0, 100),
+        invoices: invoicesList.slice(0, 50),
+        mintedPromos: (appState.mintedPromos || []).slice(0, 50),
+      });
+    }
+
+    // 8. Admin Actions (Retry failed/queued transfer, mark transferred, adjust user balance, clear errors)
+    if (req.method === 'POST' && urlPath === '/api/admin/action') {
+      const body = await readBody(req);
+      const key = String(body.key || req.headers['x-admin-key'] || '').trim();
+      if (!ADMIN_KEYS.has(key)) {
+        return sendJson(res, 403, { ok: false, error: 'Admin parol noto‘g‘ri!' });
+      }
+
+      const { action } = body;
+
+      // Action A: Retry NFT or Official Gift transfer immediately via @moon
+      if (action === 'retry_transfer') {
+        const { receiptCode } = body;
+        const w = (appState.withdrawals || []).find((x) => x.receiptCode === receiptCode);
+        if (!w) {
+          return sendJson(res, 404, { ok: false, error: 'O‘tkazma topilmadi' });
+        }
+
+        if (w.type === 'official_gift') {
+          const sr = await moonClient.sendOfficialStoreGift({
+            targetUserId: w.targetUserId,
+            giftId: Number(w.giftId) || 1,
+            expectedPrice: Number(w.price) || 50,
+            message: `🎁 PaxtaBox (@CaseBot) yutug'ingiz: ${w.title || 'Rasmiy Gift'}!`,
+          });
+          if (sr.ok) {
+            w.status = 'delivered_instant';
+            w.lastError = null;
+            w.transferredAt = new Date().toISOString();
+            saveState(true);
+            return sendJson(res, 200, {
+              ok: true,
+              message: `✅ "${w.title}" rasmiy sovg‘asi @${w.targetUsername} ga muvaffaqiyatli yuborildi!`,
+            });
+          } else {
+            w.lastError = sr.data?.message || `HTTP ${sr.status}`;
+            saveState(true);
+            return sendJson(res, 400, {
+              ok: false,
+              error: `Xatolik: ${w.lastError}`,
+            });
+          }
+        } else {
+          const tr = await moonClient.transferNftGift({
+            giftId: w.giftId,
+            targetUserId: w.targetUserId,
+          });
+          if (tr.ok) {
+            w.status = 'transferred';
+            w.lastError = null;
+            w.transferredAt = new Date().toISOString();
+            saveState(true);
+            return sendJson(res, 200, {
+              ok: true,
+              message: `✅ ${w.itemTitle || `NFT #${w.number}`} @${w.targetUsername} ga muvaffaqiyatli o‘tkazildi!`,
+            });
+          } else {
+            w.lastError = tr.data?.message || `HTTP ${tr.status}`;
+            saveState(true);
+            return sendJson(res, 400, {
+              ok: false,
+              error: `O‘tkazishda xatolik: ${w.lastError}`,
+            });
+          }
+        }
+      }
+
+      // Action B: Mark withdrawal as manually transferred
+      if (action === 'mark_transferred') {
+        const { receiptCode } = body;
+        const w = (appState.withdrawals || []).find((x) => x.receiptCode === receiptCode);
+        if (!w) return sendJson(res, 404, { ok: false, error: 'O‘tkazma topilmadi' });
+        w.status = w.type === 'official_gift' ? 'delivered_instant' : 'transferred';
+        w.lastError = null;
+        w.transferredAt = new Date().toISOString();
+        saveState(true);
+        return sendJson(res, 200, { ok: true, message: 'O‘tkazilgan deb belgilandi!' });
+      }
+
+      // Action C: Adjust User Stars Balance (+ or -)
+      if (action === 'adjust_balance') {
+        const { userId, deltaStars } = body;
+        const delta = parseInt(deltaStars, 10) || 0;
+        if (!userId || !appState.users[userId]) {
+          return sendJson(res, 404, { ok: false, error: 'Foydalanuvchi topilmadi' });
+        }
+        const u = appState.users[userId];
+        u.stars = Math.max(0, (Number(u.stars) || 0) + delta);
+        u.pendingAdminStarsDelta = (Number(u.pendingAdminStarsDelta) || 0) + delta;
+        u.updatedAt = new Date().toISOString();
+        saveState(true);
+        return sendJson(res, 200, {
+          ok: true,
+          newStars: u.stars,
+          message: `Balans yangilandi: ${u.stars} ⭐`,
+        });
+      }
+
+      // Action D: Clear error logs
+      if (action === 'clear_errors') {
+        appState.errorLogs = [];
+        saveState(true);
+        return sendJson(res, 200, { ok: true, message: 'Xatoliklar jurnali tozalandi!' });
+      }
+
+      return sendJson(res, 400, { ok: false, error: 'Noma’lum amal' });
     }
 
     return sendJson(res, 404, { ok: false, error: 'API endpoint topilmadi' });
