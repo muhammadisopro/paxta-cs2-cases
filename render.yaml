@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: paxta-cs2-cases
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PAXTA_BOT_TOKEN
+        value: "1445:8Wz27wOA9PT-VCXrPb9gIVHtoETJxAIu1f4"
+      - key: MOON_USERNAME
+        value: "shade"
+      - key: MOON_PASSWORD
+        value: "urRFEbgx5mgbWib"
