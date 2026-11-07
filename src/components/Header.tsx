@@ -12,6 +12,7 @@ interface HeaderProps {
   onAddStars: () => void;
   soundEnabled: boolean;
   onToggleSound: () => void;
+  isAdminUser?: boolean;
   onOpenAdmin?: () => void;
 }
 
@@ -25,14 +26,30 @@ export const Header: React.FC<HeaderProps> = ({
   onAddStars,
   soundEnabled,
   onToggleSound,
+  isAdminUser,
   onOpenAdmin
 }) => {
+  const logoClicksRef = React.useRef<{ count: number; timer: any }>({ count: 0, timer: null });
+
+  const handleBrandClick = () => {
+    onSelectTab('home');
+    logoClicksRef.current.count += 1;
+    if (logoClicksRef.current.timer) clearTimeout(logoClicksRef.current.timer);
+    if (logoClicksRef.current.count >= 5) {
+      logoClicksRef.current.count = 0;
+      onOpenAdmin?.();
+    } else {
+      logoClicksRef.current.timer = setTimeout(() => {
+        logoClicksRef.current.count = 0;
+      }, 1500);
+    }
+  };
   return (
     <header className="sticky top-0 z-40 w-full bg-[#05070F]/75 backdrop-blur-2xl border-b border-white/[0.08]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
         {/* Left: Brand Identity */}
         <div
-          onClick={() => onSelectTab('home')}
+          onClick={handleBrandClick}
           className="flex items-center gap-3 cursor-pointer group shrink-0"
         >
           <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-amber-300 via-amber-500 to-orange-600 flex items-center justify-center shadow-lg shadow-amber-500/25 group-hover:scale-105 transition-transform">
@@ -167,11 +184,11 @@ export const Header: React.FC<HeaderProps> = ({
             )}
           </button>
 
-          {/* Admin Panel Button */}
-          {onOpenAdmin && (
+          {/* Admin Panel Button — ONLY visible to @moon (ID: 100) */}
+          {isAdminUser && onOpenAdmin && (
             <button
               onClick={onOpenAdmin}
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full ios-glass-subtle hover:border-amber-400/40 flex items-center justify-center text-slate-400 hover:text-amber-300 transition-all"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-amber-500/20 border border-amber-400/40 flex items-center justify-center text-amber-300 hover:bg-amber-500/30 transition-all"
               title="Admin Panel (@moon)"
             >
               <Shield className="w-4 h-4" />

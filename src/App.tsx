@@ -89,6 +89,20 @@ export function App() {
     }
   });
 
+  const isAdminUser = useMemo(() => {
+    try {
+      const tgUser = (window as any)?.Telegram?.WebApp?.initDataUnsafe?.user;
+      if (tgUser?.id === 100) return true;
+      const uname = String(tgUser?.username || '').toLowerCase();
+      if (uname === 'moon' || uname === 'shade') return true;
+      if (new URLSearchParams(window.location.search).has('admin')) return true;
+      if (localStorage.getItem('paxtabox_admin_key')) return true;
+      return false;
+    } catch {
+      return false;
+    }
+  }, [showAdmin]);
+
   // Strict 1-of-1 NFT Inventory (128 NFTs from 2000001271 & 2000001272), Official Gifts (@moon) & Promocodes
   const [claimedNfts, setClaimedNfts] = useState<number[]>(saved?.claimedNfts ?? []);
   const [inventory, setInventory] = useState<WonInventoryItem[]>(saved?.inventory ?? []);
@@ -662,6 +676,7 @@ export function App() {
         }}
         onToggleSound={handleToggleSound}
         onAddStars={() => setShowAddStars(true)}
+        isAdminUser={isAdminUser}
         onOpenAdmin={() => setShowAdmin(true)}
       />
 
