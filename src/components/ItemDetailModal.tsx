@@ -40,16 +40,23 @@ export const ItemDetailModal: React.FC<ItemDetailModalProps> = ({
         </button>
 
         <div className="relative z-10 flex flex-col items-center text-center">
-          <div
-            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold mb-4"
-            style={{
-              background: rarityInfo.bgSoft,
-              color: rarityInfo.color,
-              border: `1px solid ${rarityInfo.borderSoft}`,
-            }}
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>{rarityInfo.label} daraja</span>
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
+            <div
+              className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold"
+              style={{
+                background: rarityInfo.bgSoft,
+                color: rarityInfo.color,
+                border: `1px solid ${rarityInfo.borderSoft}`,
+              }}
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>{rarityInfo.label} daraja</span>
+            </div>
+            {item.crafted && (
+              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-extrabold bg-amber-500/25 text-amber-300 border border-amber-400/45">
+                ⚒️ CRAFT (Maxsus Yasama NFT)
+              </span>
+            )}
           </div>
 
           <div

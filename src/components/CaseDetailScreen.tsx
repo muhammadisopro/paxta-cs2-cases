@@ -302,16 +302,23 @@ export const CaseDetailScreen: React.FC<CaseDetailScreenProps> = ({
                 )}
 
                 <div className="flex items-center justify-between gap-1 z-10">
-                  <span
-                    className="px-2 py-0.5 rounded-full text-[10px] font-bold"
-                    style={{
-                      backgroundColor: rarity.bgSoft,
-                      color: rarity.color,
-                      border: `1px solid ${rarity.borderSoft}`
-                    }}
-                  >
-                    {rarity.label}
-                  </span>
+                  <div className="flex items-center gap-1">
+                    <span
+                      className="px-2 py-0.5 rounded-full text-[10px] font-bold"
+                      style={{
+                        backgroundColor: rarity.bgSoft,
+                        color: rarity.color,
+                        border: `1px solid ${rarity.borderSoft}`
+                      }}
+                    >
+                      {rarity.label}
+                    </span>
+                    {item.crafted && (
+                      <span className="px-1.5 py-0.5 rounded-full text-[9px] font-extrabold bg-amber-500/25 text-amber-300 border border-amber-400/40">
+                        ⚒️ CRAFT
+                      </span>
+                    )}
+                  </div>
                   <span className="text-xs font-bold text-slate-300">
                     #{item.number}
                   </span>

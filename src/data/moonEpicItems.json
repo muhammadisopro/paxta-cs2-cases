@@ -20,7 +20,8 @@
     "tradeLockedUntil": null,
     "rarity": "special",
     "value": 86000,
-    "buybackStars": 8000
+    "buybackStars": 8000,
+    "crafted": true
   },
   {
     "id": "epic-heartlocket-8",
@@ -43,7 +44,8 @@
     "tradeLockedUntil": null,
     "rarity": "special",
     "value": 45000,
-    "buybackStars": 8000
+    "buybackStars": 8000,
+    "crafted": false
   },
   {
     "id": "epic-scaredcat-20",
@@ -66,7 +68,8 @@
     "tradeLockedUntil": null,
     "rarity": "special",
     "value": 33333,
-    "buybackStars": 8000
+    "buybackStars": 8000,
+    "crafted": false
   },
   {
     "id": "epic-scaredcat-10",
@@ -89,7 +92,8 @@
     "tradeLockedUntil": null,
     "rarity": "special",
     "value": 28000,
-    "buybackStars": 8000
+    "buybackStars": 8000,
+    "crafted": false
   },
   {
     "id": "epic-scaredcat-99",
@@ -112,7 +116,8 @@
     "tradeLockedUntil": null,
     "rarity": "special",
     "value": 22000,
-    "buybackStars": 7700
+    "buybackStars": 7700,
+    "crafted": false
   },
   {
     "id": "epic-preciouspeach-9",
@@ -135,7 +140,8 @@
     "tradeLockedUntil": null,
     "rarity": "special",
     "value": 20000,
-    "buybackStars": 7000
+    "buybackStars": 7000,
+    "crafted": false
   },
   {
     "id": "epic-preciouspeach-90",
@@ -158,7 +164,8 @@
     "tradeLockedUntil": null,
     "rarity": "covert",
     "value": 19000,
-    "buybackStars": 6650
+    "buybackStars": 6650,
+    "crafted": false
   },
   {
     "id": "epic-scaredcat-35",
@@ -181,7 +188,8 @@
     "tradeLockedUntil": null,
     "rarity": "covert",
     "value": 16000,
-    "buybackStars": 5600
+    "buybackStars": 5600,
+    "crafted": false
   },
   {
     "id": "epic-mask-5",
@@ -204,7 +212,8 @@
     "tradeLockedUntil": null,
     "rarity": "covert",
     "value": 12000,
-    "buybackStars": 4200
+    "buybackStars": 4200,
+    "crafted": true
   },
   {
     "id": "epic-preciouspeach-36",
@@ -227,7 +236,8 @@
     "tradeLockedUntil": null,
     "rarity": "covert",
     "value": 12000,
-    "buybackStars": 4200
+    "buybackStars": 4200,
+    "crafted": false
   },
   {
     "id": "epic-mask-100",
@@ -250,7 +260,8 @@
     "tradeLockedUntil": null,
     "rarity": "covert",
     "value": 11111,
-    "buybackStars": 3889
+    "buybackStars": 3889,
+    "crafted": true
   },
   {
     "id": "epic-preciouspeach-179",
@@ -273,7 +284,8 @@
     "tradeLockedUntil": null,
     "rarity": "covert",
     "value": 10800,
-    "buybackStars": 3780
+    "buybackStars": 3780,
+    "crafted": false
   },
   {
     "id": "epic-mask-99",
@@ -296,7 +308,8 @@
     "tradeLockedUntil": null,
     "rarity": "covert",
     "value": 10000,
-    "buybackStars": 3500
+    "buybackStars": 3500,
+    "crafted": true
   },
   {
     "id": "epic-mask-88",
@@ -319,7 +332,8 @@
     "tradeLockedUntil": null,
     "rarity": "covert",
     "value": 9000,
-    "buybackStars": 3150
+    "buybackStars": 3150,
+    "crafted": true
   },
   {
     "id": "epic-preciouspeach-94",
@@ -342,7 +356,8 @@
     "tradeLockedUntil": null,
     "rarity": "covert",
     "value": 8888,
-    "buybackStars": 3111
+    "buybackStars": 3111,
+    "crafted": false
   },
   {
     "id": "epic-preciouspeach-49",
@@ -365,7 +380,8 @@
     "tradeLockedUntil": null,
     "rarity": "covert",
     "value": 8888,
-    "buybackStars": 3111
+    "buybackStars": 3111,
+    "crafted": false
   },
   {
     "id": "epic-deskcalendar-5",
@@ -388,7 +404,8 @@
     "tradeLockedUntil": "2026-11-09T09:56:23+00:00",
     "rarity": "covert",
     "value": 8500,
-    "buybackStars": 2975
+    "buybackStars": 2975,
+    "crafted": true
   },
   {
     "id": "epic-deskcalendar-6",
@@ -411,7 +428,8 @@
     "tradeLockedUntil": "2026-11-09T09:56:25+00:00",
     "rarity": "classified",
     "value": 8000,
-    "buybackStars": 2800
+    "buybackStars": 2800,
+    "crafted": true
   },
   {
     "id": "epic-preciouspeach-186",
@@ -434,7 +452,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 8000,
-    "buybackStars": 2800
+    "buybackStars": 2800,
+    "crafted": false
   },
   {
     "id": "epic-preciouspeach-167",
@@ -457,7 +476,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 8000,
-    "buybackStars": 2800
+    "buybackStars": 2800,
+    "crafted": false
   },
   {
     "id": "epic-preciouspeach-158",
@@ -480,7 +500,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 7788,
-    "buybackStars": 2726
+    "buybackStars": 2726,
+    "crafted": false
   },
   {
     "id": "epic-preciouspeach-56",
@@ -503,7 +524,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 7788,
-    "buybackStars": 2726
+    "buybackStars": 2726,
+    "crafted": false
   },
   {
     "id": "epic-mask-101",
@@ -526,7 +548,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 7777,
-    "buybackStars": 2722
+    "buybackStars": 2722,
+    "crafted": false
   },
   {
     "id": "epic-mask-111",
@@ -549,7 +572,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 7777,
-    "buybackStars": 2722
+    "buybackStars": 2722,
+    "crafted": true
   },
   {
     "id": "epic-mask-200",
@@ -572,7 +596,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 7777,
-    "buybackStars": 2722
+    "buybackStars": 2722,
+    "crafted": true
   },
   {
     "id": "epic-preciouspeach-130",
@@ -595,7 +620,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 7777,
-    "buybackStars": 2722
+    "buybackStars": 2722,
+    "crafted": false
   },
   {
     "id": "epic-deskcalendar-10",
@@ -618,7 +644,8 @@
     "tradeLockedUntil": "2026-11-09T09:56:41+00:00",
     "rarity": "classified",
     "value": 6500,
-    "buybackStars": 2275
+    "buybackStars": 2275,
+    "crafted": true
   },
   {
     "id": "epic-deskcalendar-99",
@@ -641,7 +668,8 @@
     "tradeLockedUntil": "2026-11-09T10:04:08+00:00",
     "rarity": "classified",
     "value": 5500,
-    "buybackStars": 1925
+    "buybackStars": 1925,
+    "crafted": true
   },
   {
     "id": "epic-mask-90",
@@ -664,7 +692,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 5200,
-    "buybackStars": 1820
+    "buybackStars": 1820,
+    "crafted": true
   },
   {
     "id": "epic-mask-147",
@@ -687,7 +716,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 5000,
-    "buybackStars": 1750
+    "buybackStars": 1750,
+    "crafted": false
   },
   {
     "id": "epic-mask-307",
@@ -710,7 +740,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 5000,
-    "buybackStars": 1750
+    "buybackStars": 1750,
+    "crafted": false
   },
   {
     "id": "epic-mask-250",
@@ -733,7 +764,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 5000,
-    "buybackStars": 1750
+    "buybackStars": 1750,
+    "crafted": true
   },
   {
     "id": "epic-mask-252",
@@ -756,7 +788,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 5000,
-    "buybackStars": 1750
+    "buybackStars": 1750,
+    "crafted": true
   },
   {
     "id": "epic-mask-254",
@@ -779,7 +812,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 5000,
-    "buybackStars": 1750
+    "buybackStars": 1750,
+    "crafted": true
   },
   {
     "id": "epic-mask-255",
@@ -802,7 +836,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 5000,
-    "buybackStars": 1750
+    "buybackStars": 1750,
+    "crafted": true
   },
   {
     "id": "epic-mask-86",
@@ -825,7 +860,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 5000,
-    "buybackStars": 1750
+    "buybackStars": 1750,
+    "crafted": false
   },
   {
     "id": "epic-mask-102",
@@ -848,7 +884,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 5000,
-    "buybackStars": 1750
+    "buybackStars": 1750,
+    "crafted": true
   },
   {
     "id": "epic-mask-106",
@@ -871,7 +908,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 5000,
-    "buybackStars": 1750
+    "buybackStars": 1750,
+    "crafted": false
   },
   {
     "id": "epic-mask-116",
@@ -894,7 +932,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 5000,
-    "buybackStars": 1750
+    "buybackStars": 1750,
+    "crafted": false
   },
   {
     "id": "epic-mask-124",
@@ -917,7 +956,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 5000,
-    "buybackStars": 1750
+    "buybackStars": 1750,
+    "crafted": true
   },
   {
     "id": "epic-mask-132",
@@ -940,7 +980,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 5000,
-    "buybackStars": 1750
+    "buybackStars": 1750,
+    "crafted": false
   },
   {
     "id": "epic-mask-135",
@@ -963,7 +1004,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 5000,
-    "buybackStars": 1750
+    "buybackStars": 1750,
+    "crafted": false
   },
   {
     "id": "epic-mask-138",
@@ -986,7 +1028,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 5000,
-    "buybackStars": 1750
+    "buybackStars": 1750,
+    "crafted": false
   },
   {
     "id": "epic-mask-205",
@@ -1009,7 +1052,8 @@
     "tradeLockedUntil": null,
     "rarity": "classified",
     "value": 5000,
-    "buybackStars": 1750
+    "buybackStars": 1750,
+    "crafted": false
   },
   {
     "id": "epic-deskcalendar-33",
@@ -1032,7 +1076,8 @@
     "tradeLockedUntil": "2026-11-09T09:58:44+00:00",
     "rarity": "restricted",
     "value": 4200,
-    "buybackStars": 1470
+    "buybackStars": 1470,
+    "crafted": false
   },
   {
     "id": "epic-deskcalendar-30",
@@ -1055,7 +1100,8 @@
     "tradeLockedUntil": "2026-11-09T09:58:15+00:00",
     "rarity": "restricted",
     "value": 4000,
-    "buybackStars": 1400
+    "buybackStars": 1400,
+    "crafted": true
   },
   {
     "id": "epic-deskcalendar-54",
@@ -1078,7 +1124,8 @@
     "tradeLockedUntil": "2026-11-09T10:00:01+00:00",
     "rarity": "restricted",
     "value": 3500,
-    "buybackStars": 1225
+    "buybackStars": 1225,
+    "crafted": true
   },
   {
     "id": "epic-mask-275",
@@ -1101,7 +1148,8 @@
     "tradeLockedUntil": null,
     "rarity": "restricted",
     "value": 3333,
-    "buybackStars": 1167
+    "buybackStars": 1167,
+    "crafted": false
   },
   {
     "id": "epic-starnotepad-524",
@@ -1124,7 +1172,8 @@
     "tradeLockedUntil": null,
     "rarity": "restricted",
     "value": 1500,
-    "buybackStars": 525
+    "buybackStars": 525,
+    "crafted": false
   },
   {
     "id": "epic-starnotepad-183",
@@ -1147,7 +1196,8 @@
     "tradeLockedUntil": null,
     "rarity": "restricted",
     "value": 1500,
-    "buybackStars": 525
+    "buybackStars": 525,
+    "crafted": false
   },
   {
     "id": "epic-starnotepad-433",
@@ -1170,7 +1220,8 @@
     "tradeLockedUntil": null,
     "rarity": "restricted",
     "value": 1500,
-    "buybackStars": 525
+    "buybackStars": 525,
+    "crafted": false
   },
   {
     "id": "epic-deskcalendar-420",
@@ -1193,7 +1244,8 @@
     "tradeLockedUntil": "2026-11-09T10:24:42+00:00",
     "rarity": "mil-spec",
     "value": 1013,
-    "buybackStars": 400
+    "buybackStars": 400,
+    "crafted": false
   },
   {
     "id": "epic-deskcalendar-422",
@@ -1216,7 +1268,8 @@
     "tradeLockedUntil": "2026-11-09T10:24:43+00:00",
     "rarity": "mil-spec",
     "value": 1013,
-    "buybackStars": 400
+    "buybackStars": 400,
+    "crafted": false
   },
   {
     "id": "epic-lolpop-320",
@@ -1239,7 +1292,8 @@
     "tradeLockedUntil": null,
     "rarity": "mil-spec",
     "value": 1000,
-    "buybackStars": 400
+    "buybackStars": 400,
+    "crafted": false
   },
   {
     "id": "epic-deskcalendar-410",
@@ -1260,9 +1314,10 @@
     "image": "/epic/attr-3992.png",
     "link": "https://paxta.online/nft/DeskCalendar-410",
     "tradeLockedUntil": "2026-11-09T10:24:40+00:00",
-    "rarity": "mil-spec",
-    "value": 750,
-    "buybackStars": 400
+    "rarity": "classified",
+    "value": 1350,
+    "buybackStars": 490,
+    "crafted": true
   },
   {
     "id": "epic-deskcalendar-411",
@@ -1283,9 +1338,10 @@
     "image": "/epic/attr-3985.png",
     "link": "https://paxta.online/nft/DeskCalendar-411",
     "tradeLockedUntil": "2026-11-09T10:24:40+00:00",
-    "rarity": "mil-spec",
-    "value": 750,
-    "buybackStars": 400
+    "rarity": "classified",
+    "value": 1350,
+    "buybackStars": 490,
+    "crafted": true
   },
   {
     "id": "epic-deskcalendar-412",
@@ -1308,7 +1364,8 @@
     "tradeLockedUntil": "2026-11-09T10:24:41+00:00",
     "rarity": "mil-spec",
     "value": 750,
-    "buybackStars": 400
+    "buybackStars": 400,
+    "crafted": false
   },
   {
     "id": "epic-deskcalendar-414",
@@ -1329,9 +1386,10 @@
     "image": "/epic/attr-4001.png",
     "link": "https://paxta.online/nft/DeskCalendar-414",
     "tradeLockedUntil": "2026-11-09T10:24:41+00:00",
-    "rarity": "mil-spec",
-    "value": 750,
-    "buybackStars": 400
+    "rarity": "classified",
+    "value": 1250,
+    "buybackStars": 460,
+    "crafted": true
   },
   {
     "id": "epic-deskcalendar-293",
@@ -1352,9 +1410,10 @@
     "image": "/epic/attr-3996.png",
     "link": "https://paxta.online/nft/DeskCalendar-293",
     "tradeLockedUntil": "2026-11-09T10:14:17+00:00",
-    "rarity": "mil-spec",
-    "value": 750,
-    "buybackStars": 400
+    "rarity": "classified",
+    "value": 1450,
+    "buybackStars": 520,
+    "crafted": true
   },
   {
     "id": "epic-bdaycandle-225",
@@ -1377,7 +1436,8 @@
     "tradeLockedUntil": null,
     "rarity": "mil-spec",
     "value": 675,
-    "buybackStars": 400
+    "buybackStars": 400,
+    "crafted": false
   },
   {
     "id": "epic-bdaycandle-184",
@@ -1400,7 +1460,8 @@
     "tradeLockedUntil": null,
     "rarity": "mil-spec",
     "value": 675,
-    "buybackStars": 400
+    "buybackStars": 400,
+    "crafted": false
   },
   {
     "id": "epic-bdaycandle-289",
@@ -1423,7 +1484,8 @@
     "tradeLockedUntil": null,
     "rarity": "mil-spec",
     "value": 675,
-    "buybackStars": 400
+    "buybackStars": 400,
+    "crafted": false
   },
   {
     "id": "epic-bdaycandle-157",
@@ -1446,7 +1508,8 @@
     "tradeLockedUntil": null,
     "rarity": "mil-spec",
     "value": 675,
-    "buybackStars": 400
+    "buybackStars": 400,
+    "crafted": false
   },
   {
     "id": "epic-lolpop-325",
@@ -1469,7 +1532,8 @@
     "tradeLockedUntil": null,
     "rarity": "mil-spec",
     "value": 600,
-    "buybackStars": 400
+    "buybackStars": 400,
+    "crafted": false
   },
   {
     "id": "epic-lolpop-318",
@@ -1492,7 +1556,8 @@
     "tradeLockedUntil": null,
     "rarity": "mil-spec",
     "value": 540,
-    "buybackStars": 400
+    "buybackStars": 400,
+    "crafted": false
   },
   {
     "id": "epic-bdaycandle-723",
@@ -1515,7 +1580,8 @@
     "tradeLockedUntil": null,
     "rarity": "mil-spec",
     "value": 500,
-    "buybackStars": 400
+    "buybackStars": 400,
+    "crafted": false
   },
   {
     "id": "epic-bdaycandle-668",
@@ -1538,7 +1604,8 @@
     "tradeLockedUntil": null,
     "rarity": "mil-spec",
     "value": 500,
-    "buybackStars": 400
+    "buybackStars": 400,
+    "crafted": false
   },
   {
     "id": "epic-bdaycandle-340",
@@ -1561,7 +1628,8 @@
     "tradeLockedUntil": null,
     "rarity": "mil-spec",
     "value": 500,
-    "buybackStars": 400
+    "buybackStars": 400,
+    "crafted": false
   },
   {
     "id": "epic-lolpop-317",
@@ -1584,7 +1652,8 @@
     "tradeLockedUntil": null,
     "rarity": "mil-spec",
     "value": 500,
-    "buybackStars": 400
+    "buybackStars": 400,
+    "crafted": false
   },
   {
     "id": "epic-bdaycandle-253",
@@ -1607,7 +1676,8 @@
     "tradeLockedUntil": null,
     "rarity": "mil-spec",
     "value": 500,
-    "buybackStars": 400
+    "buybackStars": 400,
+    "crafted": false
   },
   {
     "id": "epic-lolpop-646",
@@ -1630,6 +1700,7 @@
     "tradeLockedUntil": null,
     "rarity": "mil-spec",
     "value": 400,
-    "buybackStars": 400
+    "buybackStars": 400,
+    "crafted": false
   }
 ]

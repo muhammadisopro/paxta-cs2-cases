@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { CaseDefinition, DropReward, RARITY_CONFIG } from '../data/cases';
+import {
+  CaseDefinition,
+  DropReward,
+  RARITY_CONFIG,
+  UPGRADE_BOT_PAXTA_URL,
+  openUpgradeBotInPaxta,
+} from '../data/cases';
 import {
   ArrowLeft,
   RotateCcw,
@@ -298,10 +304,11 @@ export const ResultModal: React.FC<ResultModalProps> = ({
 
               <div className="flex items-center justify-between gap-2 pt-1">
                 <span className="text-[11px] text-white/65">
-                  Kodni <strong>@UpgradeBot</strong> ichidagi Promokod bo'limiga kiriting.
+                  Kodni PaxtaGram ichidagi <strong>@UpgradeBot</strong> Promokod bo'limiga kiriting.
                 </span>
                 <a
-                  href="https://paxta-gift-upgrade.onrender.com"
+                  href={UPGRADE_BOT_PAXTA_URL}
+                  onClick={(e) => openUpgradeBotInPaxta(e)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-xs font-extrabold text-amber-300 hover:text-amber-200 shrink-0"

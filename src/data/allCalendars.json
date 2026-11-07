@@ -19,7 +19,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-98",
     "tradeLockedUntil": "2026-11-09T10:04:04+00:00",
     "rarity": "special",
-    "value": 5000
+    "value": 5000,
+    "crafted": false
   },
   {
     "id": "calendar-105",
@@ -41,7 +42,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-105",
     "tradeLockedUntil": "2026-11-09T10:04:40+00:00",
     "rarity": "special",
-    "value": 5000
+    "value": 5000,
+    "crafted": false
   },
   {
     "id": "calendar-106",
@@ -63,7 +65,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-106",
     "tradeLockedUntil": "2026-11-09T10:04:41+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-108",
@@ -85,7 +88,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-108",
     "tradeLockedUntil": "2026-11-09T10:04:42+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-109",
@@ -107,7 +111,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-109",
     "tradeLockedUntil": "2026-11-09T10:04:44+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-111",
@@ -129,7 +134,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-111",
     "tradeLockedUntil": "2026-11-09T10:04:48+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-112",
@@ -151,7 +157,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-112",
     "tradeLockedUntil": "2026-11-09T10:04:52+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-114",
@@ -173,7 +180,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-114",
     "tradeLockedUntil": "2026-11-09T10:04:55+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-116",
@@ -195,7 +203,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-116",
     "tradeLockedUntil": "2026-11-09T10:05:01+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-117",
@@ -217,7 +226,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-117",
     "tradeLockedUntil": "2026-11-09T10:05:02+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-119",
@@ -239,7 +249,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-119",
     "tradeLockedUntil": "2026-11-09T10:05:03+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-120",
@@ -261,7 +272,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-120",
     "tradeLockedUntil": "2026-11-09T10:05:04+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-121",
@@ -283,7 +295,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-121",
     "tradeLockedUntil": "2026-11-09T10:05:05+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-122",
@@ -305,7 +318,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-122",
     "tradeLockedUntil": "2026-11-09T10:05:06+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-123",
@@ -327,7 +341,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-123",
     "tradeLockedUntil": "2026-11-09T10:05:07+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-125",
@@ -349,7 +364,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-125",
     "tradeLockedUntil": "2026-11-09T10:05:12+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-127",
@@ -371,7 +387,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-127",
     "tradeLockedUntil": "2026-11-09T10:05:15+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-128",
@@ -393,7 +410,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-128",
     "tradeLockedUntil": "2026-11-09T10:05:16+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-129",
@@ -415,7 +433,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-129",
     "tradeLockedUntil": "2026-11-09T10:05:18+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-130",
@@ -437,7 +456,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-130",
     "tradeLockedUntil": "2026-11-09T10:05:18+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-132",
@@ -459,7 +479,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-132",
     "tradeLockedUntil": "2026-11-09T10:05:23+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-134",
@@ -481,7 +502,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-134",
     "tradeLockedUntil": "2026-11-09T10:05:34+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-139",
@@ -503,7 +525,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-139",
     "tradeLockedUntil": "2026-11-09T10:05:39+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-140",
@@ -525,7 +548,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-140",
     "tradeLockedUntil": "2026-11-09T10:05:42+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-143",
@@ -547,7 +571,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-143",
     "tradeLockedUntil": "2026-11-09T10:05:43+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-145",
@@ -569,7 +594,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-145",
     "tradeLockedUntil": "2026-11-09T10:05:45+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-146",
@@ -591,7 +617,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-146",
     "tradeLockedUntil": "2026-11-09T10:05:46+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-148",
@@ -613,7 +640,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-148",
     "tradeLockedUntil": "2026-11-09T10:05:47+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-150",
@@ -635,7 +663,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-150",
     "tradeLockedUntil": "2026-11-09T10:05:47+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-151",
@@ -657,7 +686,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-151",
     "tradeLockedUntil": "2026-11-09T10:05:49+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-152",
@@ -679,7 +709,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-152",
     "tradeLockedUntil": "2026-11-09T10:05:50+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-154",
@@ -701,7 +732,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-154",
     "tradeLockedUntil": "2026-11-09T10:05:51+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-155",
@@ -723,7 +755,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-155",
     "tradeLockedUntil": "2026-11-09T10:05:52+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-157",
@@ -745,7 +778,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-157",
     "tradeLockedUntil": "2026-11-09T10:05:53+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-158",
@@ -767,7 +801,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-158",
     "tradeLockedUntil": "2026-11-09T10:05:54+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-159",
@@ -789,7 +824,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-159",
     "tradeLockedUntil": "2026-11-09T10:05:55+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-160",
@@ -811,7 +847,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-160",
     "tradeLockedUntil": "2026-11-09T10:05:56+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-162",
@@ -833,7 +870,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-162",
     "tradeLockedUntil": "2026-11-09T10:05:57+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-163",
@@ -855,7 +893,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-163",
     "tradeLockedUntil": "2026-11-09T10:05:58+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-164",
@@ -877,7 +916,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-164",
     "tradeLockedUntil": "2026-11-09T10:05:59+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-515",
@@ -899,7 +939,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-515",
     "tradeLockedUntil": "2026-11-09T10:28:51+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-523",
@@ -921,7 +962,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-523",
     "tradeLockedUntil": "2026-11-09T10:29:04+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-525",
@@ -943,7 +985,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-525",
     "tradeLockedUntil": "2026-11-09T10:29:15+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-529",
@@ -965,7 +1008,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-529",
     "tradeLockedUntil": "2026-11-09T10:29:26+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-533",
@@ -987,7 +1031,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-533",
     "tradeLockedUntil": "2026-11-09T10:29:36+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-539",
@@ -1009,7 +1054,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-539",
     "tradeLockedUntil": "2026-11-09T10:29:45+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-542",
@@ -1031,7 +1077,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-542",
     "tradeLockedUntil": "2026-11-09T10:29:54+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-552",
@@ -1053,7 +1100,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-552",
     "tradeLockedUntil": "2026-11-09T10:30:06+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-557",
@@ -1075,7 +1123,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-557",
     "tradeLockedUntil": "2026-11-09T10:30:11+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-564",
@@ -1097,7 +1146,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-564",
     "tradeLockedUntil": "2026-11-09T10:30:24+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-570",
@@ -1119,7 +1169,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-570",
     "tradeLockedUntil": "2026-11-09T10:30:38+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-576",
@@ -1141,7 +1192,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-576",
     "tradeLockedUntil": "2026-11-09T10:30:49+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-580",
@@ -1163,7 +1215,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-580",
     "tradeLockedUntil": "2026-11-09T10:31:00+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-586",
@@ -1185,7 +1238,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-586",
     "tradeLockedUntil": "2026-11-09T10:31:10+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-590",
@@ -1207,7 +1261,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-590",
     "tradeLockedUntil": "2026-11-09T10:31:21+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-595",
@@ -1229,7 +1284,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-595",
     "tradeLockedUntil": "2026-11-09T10:31:34+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-599",
@@ -1251,7 +1307,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-599",
     "tradeLockedUntil": "2026-11-09T10:31:45+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-607",
@@ -1273,7 +1330,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-607",
     "tradeLockedUntil": "2026-11-09T10:32:00+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-660",
@@ -1295,7 +1353,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-660",
     "tradeLockedUntil": "2026-11-09T10:39:28+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-661",
@@ -1317,7 +1376,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-661",
     "tradeLockedUntil": "2026-11-09T10:39:41+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-662",
@@ -1339,7 +1399,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-662",
     "tradeLockedUntil": "2026-11-09T10:39:50+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-666",
@@ -1361,7 +1422,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-666",
     "tradeLockedUntil": "2026-11-09T10:40:00+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-673",
@@ -1383,7 +1445,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-673",
     "tradeLockedUntil": "2026-11-09T10:41:32+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-674",
@@ -1405,7 +1468,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-674",
     "tradeLockedUntil": "2026-11-09T10:41:41+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-675",
@@ -1427,7 +1491,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-675",
     "tradeLockedUntil": "2026-11-09T10:41:49+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-676",
@@ -1449,7 +1514,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-676",
     "tradeLockedUntil": "2026-11-09T10:41:58+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-678",
@@ -1471,7 +1537,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-678",
     "tradeLockedUntil": "2026-11-09T10:42:06+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-679",
@@ -1493,7 +1560,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-679",
     "tradeLockedUntil": "2026-11-09T10:42:15+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-681",
@@ -1515,7 +1583,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-681",
     "tradeLockedUntil": "2026-11-09T10:42:24+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-683",
@@ -1537,7 +1606,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-683",
     "tradeLockedUntil": "2026-11-09T10:42:32+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-685",
@@ -1559,7 +1629,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-685",
     "tradeLockedUntil": "2026-11-09T10:42:42+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-687",
@@ -1581,7 +1652,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-687",
     "tradeLockedUntil": "2026-11-09T10:42:53+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-692",
@@ -1603,7 +1675,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-692",
     "tradeLockedUntil": "2026-11-09T10:43:03+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-698",
@@ -1625,7 +1698,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-698",
     "tradeLockedUntil": "2026-11-09T10:43:15+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-706",
@@ -1647,7 +1721,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-706",
     "tradeLockedUntil": "2026-11-09T10:43:32+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-717",
@@ -1669,7 +1744,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-717",
     "tradeLockedUntil": "2026-11-09T10:44:05+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-723",
@@ -1691,7 +1767,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-723",
     "tradeLockedUntil": "2026-11-09T10:44:23+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-727",
@@ -1713,7 +1790,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-727",
     "tradeLockedUntil": "2026-11-09T10:44:36+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-731",
@@ -1735,7 +1813,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-731",
     "tradeLockedUntil": "2026-11-09T10:44:55+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-735",
@@ -1757,7 +1836,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-735",
     "tradeLockedUntil": "2026-11-09T10:45:04+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-737",
@@ -1779,7 +1859,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-737",
     "tradeLockedUntil": "2026-11-09T10:45:14+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-739",
@@ -1801,7 +1882,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-739",
     "tradeLockedUntil": "2026-11-09T10:45:24+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-741",
@@ -1823,7 +1905,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-741",
     "tradeLockedUntil": "2026-11-09T10:45:34+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-744",
@@ -1845,7 +1928,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-744",
     "tradeLockedUntil": "2026-11-09T10:45:42+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-789",
@@ -1867,7 +1951,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-789",
     "tradeLockedUntil": "2026-11-09T10:48:26+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-934",
@@ -1889,7 +1974,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-934",
     "tradeLockedUntil": "2026-11-09T10:52:45+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-941",
@@ -1911,7 +1997,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-941",
     "tradeLockedUntil": "2026-11-09T10:52:56+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-943",
@@ -1933,7 +2020,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-943",
     "tradeLockedUntil": "2026-11-09T10:53:08+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-946",
@@ -1955,7 +2043,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-946",
     "tradeLockedUntil": "2026-11-09T10:53:20+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-949",
@@ -1977,7 +2066,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-949",
     "tradeLockedUntil": "2026-11-09T10:53:29+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-954",
@@ -1999,7 +2089,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-954",
     "tradeLockedUntil": "2026-11-09T10:53:50+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-959",
@@ -2021,7 +2112,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-959",
     "tradeLockedUntil": "2026-11-09T10:54:02+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-962",
@@ -2043,7 +2135,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-962",
     "tradeLockedUntil": "2026-11-09T10:54:10+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-969",
@@ -2065,7 +2158,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-969",
     "tradeLockedUntil": "2026-11-09T10:54:44+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-975",
@@ -2087,7 +2181,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-975",
     "tradeLockedUntil": "2026-11-09T10:54:56+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-978",
@@ -2109,7 +2204,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-978",
     "tradeLockedUntil": "2026-11-09T10:55:07+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-980",
@@ -2131,7 +2227,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-980",
     "tradeLockedUntil": "2026-11-09T10:55:18+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-983",
@@ -2153,7 +2250,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-983",
     "tradeLockedUntil": "2026-11-09T10:55:29+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-987",
@@ -2175,7 +2273,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-987",
     "tradeLockedUntil": "2026-11-09T10:55:40+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-990",
@@ -2197,7 +2296,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-990",
     "tradeLockedUntil": "2026-11-09T10:55:51+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-994",
@@ -2219,7 +2319,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-994",
     "tradeLockedUntil": "2026-11-09T10:55:59+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-995",
@@ -2241,7 +2342,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-995",
     "tradeLockedUntil": "2026-11-09T10:56:07+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-999",
@@ -2263,7 +2365,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-999",
     "tradeLockedUntil": "2026-11-09T10:56:11+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-1004",
@@ -2285,7 +2388,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1004",
     "tradeLockedUntil": "2026-11-09T10:56:20+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-1007",
@@ -2307,7 +2411,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1007",
     "tradeLockedUntil": "2026-11-09T10:56:30+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-1010",
@@ -2329,7 +2434,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1010",
     "tradeLockedUntil": "2026-11-09T10:56:40+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-1013",
@@ -2351,7 +2457,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1013",
     "tradeLockedUntil": "2026-11-09T10:56:51+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-1016",
@@ -2373,7 +2480,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1016",
     "tradeLockedUntil": "2026-11-09T10:57:01+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-1019",
@@ -2395,7 +2503,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1019",
     "tradeLockedUntil": "2026-11-09T10:57:13+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-1026",
@@ -2417,7 +2526,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1026",
     "tradeLockedUntil": "2026-11-09T10:57:43+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-1030",
@@ -2439,7 +2549,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1030",
     "tradeLockedUntil": "2026-11-09T10:57:54+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-1034",
@@ -2461,7 +2572,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1034",
     "tradeLockedUntil": "2026-11-09T10:58:04+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-1038",
@@ -2483,7 +2595,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1038",
     "tradeLockedUntil": "2026-11-09T10:58:18+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-1041",
@@ -2505,7 +2618,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1041",
     "tradeLockedUntil": "2026-11-09T10:58:27+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-1043",
@@ -2527,7 +2641,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1043",
     "tradeLockedUntil": "2026-11-09T10:58:38+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-1046",
@@ -2549,7 +2664,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1046",
     "tradeLockedUntil": "2026-11-09T10:58:48+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-1047",
@@ -2571,7 +2687,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1047",
     "tradeLockedUntil": "2026-11-09T10:58:58+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-1053",
@@ -2593,7 +2710,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1053",
     "tradeLockedUntil": "2026-11-09T10:59:23+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-1055",
@@ -2615,7 +2733,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1055",
     "tradeLockedUntil": "2026-11-09T10:59:31+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-1057",
@@ -2637,7 +2756,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1057",
     "tradeLockedUntil": "2026-11-09T10:59:42+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-1062",
@@ -2659,7 +2779,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1062",
     "tradeLockedUntil": "2026-11-09T10:59:54+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-1065",
@@ -2681,7 +2802,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1065",
     "tradeLockedUntil": "2026-11-09T11:00:05+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-1068",
@@ -2703,7 +2825,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1068",
     "tradeLockedUntil": "2026-11-09T11:00:27+00:00",
     "rarity": "covert",
-    "value": 1800
+    "value": 1800,
+    "crafted": false
   },
   {
     "id": "calendar-1069",
@@ -2725,7 +2848,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1069",
     "tradeLockedUntil": "2026-11-09T11:00:39+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-1070",
@@ -2747,7 +2871,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1070",
     "tradeLockedUntil": "2026-11-09T11:00:47+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-1077",
@@ -2769,7 +2894,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1077",
     "tradeLockedUntil": "2026-11-09T11:01:53+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-1078",
@@ -2791,7 +2917,8 @@
     "link": "https://paxta.online/nft/DeskCalendar-1078",
     "tradeLockedUntil": "2026-11-09T11:02:03+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   },
   {
     "id": "calendar-1081",
@@ -2813,6 +2940,7 @@
     "link": "https://paxta.online/nft/DeskCalendar-1081",
     "tradeLockedUntil": "2026-11-09T11:02:13+00:00",
     "rarity": "classified",
-    "value": 1100
+    "value": 1100,
+    "crafted": false
   }
 ]

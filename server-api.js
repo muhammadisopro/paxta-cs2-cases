@@ -780,7 +780,7 @@ export function createApiMiddleware() {
         maxUses: 1,
         rewardType: promo.rewardType,
         botUsername: '@UpgradeBot',
-        botUrl: 'https://paxta-gift-upgrade.onrender.com',
+        botUrl: 'https://paxta.online/u/UpgradeBot',
       });
     }
 

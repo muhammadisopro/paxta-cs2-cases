@@ -19,11 +19,37 @@ export interface CalendarItem {
   };
   image: string;
   link: string;
+  crafted?: boolean;
+  craftedBurnedStars?: number;
   tradeLockedUntil?: string | null;
   rarity: 'mil-spec' | 'restricted' | 'classified' | 'covert' | 'special';
   value: number; // Market / Collector Value in Stars
   buybackStars: number; // In-app exchange value in Stars
   requiredReserve?: number; // Strict escrow reserve needed before this specific NFT can drop
+}
+
+export const UPGRADE_BOT_PAXTA_URL = 'https://paxta.online/u/UpgradeBot';
+
+export function openUpgradeBotInPaxta(e?: { preventDefault?: () => void }) {
+  try {
+    const tg = (window as any)?.Telegram?.WebApp;
+    if (tg?.openTelegramLink) {
+      e?.preventDefault?.();
+      tg.openTelegramLink('https://t.me/UpgradeBot');
+      return;
+    }
+    if (window.parent && window.parent !== window) {
+      e?.preventDefault?.();
+      window.parent.postMessage(
+        JSON.stringify({
+          eventType: 'web_app_open_tg_link',
+          eventData: { path_full: '/UpgradeBot' },
+        }),
+        '*'
+      );
+      return;
+    }
+  } catch {}
 }
 
 // 1. 128 Desk Calendar NFTs from Channels 2000001271 & 2000001272
@@ -63,6 +89,7 @@ export const ALL_CALENDARS: CalendarItem[] = (allCalendarsData as any[]).map((it
 // so total net profit across all 71 items exceeds +335,000 Stars with 0% risk of early grail loss!
 export const MOON_EPIC_ITEMS: CalendarItem[] = (moonEpicItemsData as any[]).map((item) => {
   const val = Number(item.value) || 1000;
+  const isCrafted = Boolean(item.crafted);
   let reqReserve = 1450;
   if (val >= 40000) {
     // Heart Locket #8 (45k) & Resistance Dog #30 (86k)
@@ -74,11 +101,14 @@ export const MOON_EPIC_ITEMS: CalendarItem[] = (moonEpicItemsData as any[]).map(
     // Mask #5, #99, #100, Scared Cat #35, Precious Peach #36, #90, #179
     reqReserve = Math.round(val * 0.72);
   } else if (val >= 5000) {
-    // Masks & Precious Peaches & 1-Digit Desk Calendars (#5, #6, #10)
+    // Masks & Precious Peaches & 1-Digit Crafted Desk Calendars (#5, #6, #10, #99)
     reqReserve = Math.max(3800, Math.round(val * 0.68));
   } else if (val >= 1500) {
-    // Star Notepads & Low-Number Calendars (#30, #33, #54)
+    // Star Notepads & Low-Number Crafted Calendars (#30, #33, #54)
     reqReserve = 2400;
+  } else if (isCrafted) {
+    // Crafted Desk Calendars (#293 Daily Bread, #410 Anno Domini, #411 Hermes, #414 Mesozoic — 1,250–1,450 ⭐)
+    reqReserve = 2150;
   } else {
     // Lol Pop & B-Day Candle & Standard Profile Calendars
     reqReserve = 1450;
@@ -86,6 +116,7 @@ export const MOON_EPIC_ITEMS: CalendarItem[] = (moonEpicItemsData as any[]).map(
 
   return {
     ...item,
+    crafted: isCrafted,
     requiredReserve: reqReserve,
   };
 });
@@ -150,11 +181,12 @@ export interface CaseDefinition {
 
 function nftToReward(c: CalendarItem): DropReward {
   const shortTitle = c.title && c.title !== 'Desk Calendar' ? c.title : 'Kalendar';
+  const craftPrefix = c.crafted ? '⚒️ Craft · ' : '';
   return {
     id: `nft-${c.id}`,
     type: 'nft',
     name: `${shortTitle} #${c.number}`,
-    subtitle: `${c.model} · ${c.backdrop}`,
+    subtitle: `${craftPrefix}${c.model} · ${c.backdrop}`,
     image: c.image,
     rarity: c.rarity,
     value: c.value,

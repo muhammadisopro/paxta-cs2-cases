@@ -31,13 +31,14 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
   onOpenShop
 }) => {
   const [selectedRarity, setSelectedRarity] = useState<string>('all');
-  const [sourceFilter, setSourceFilter] = useState<'all' | 'moon-epic' | 'calendars'>('all');
+  const [sourceFilter, setSourceFilter] = useState<'all' | 'moon-epic' | 'crafted' | 'calendars'>('all');
   const [stockFilter, setStockFilter] = useState<'all' | 'available' | 'claimed'>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   const moonEpicCase = CASES.find((c) => c.id === 'moon-epic-case') || CASES[CASES.length - 1];
   const goldenCase = CASES.find((c) => c.id === 'golden-royale') || CASES[3];
   const totalAvailable = ALL_NFT_ITEMS.filter((i) => !isNftClaimed(i, claimedNfts)).length;
+  const craftedItems = ALL_NFT_ITEMS.filter((i) => i.crafted);
 
   // 4 Hero Showcase NFTs (Heart Locket #8, Resistance Dog #30, Scared Cat #20, Desk Calendar #98)
   const heroNfts = [
@@ -51,6 +52,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
   const sourceItems =
     sourceFilter === 'moon-epic'
       ? MOON_EPIC_ITEMS
+      : sourceFilter === 'crafted'
+      ? craftedItems
       : sourceFilter === 'calendars'
       ? ALL_CALENDARS
       : ALL_NFT_ITEMS;
@@ -174,7 +177,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 className="ios-glass-subtle hover:bg-white/[0.10] px-4 py-3.5 rounded-full text-xs font-semibold text-amber-200 flex items-center gap-1.5 transition-all active:scale-95"
               >
                 <Gift className="w-4 h-4 text-amber-400" />
-                <span>+385 ⭐ Bonus</span>
+                <span>⭐ Balansni To‘ldirish</span>
               </button>
             </div>
           </div>
@@ -373,7 +376,17 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             }`}
           >
             <Crown className="w-3.5 h-3.5" />
-            <span>5. MOON EPIC Fondi ({MOON_EPIC_ITEMS.length} ta · 556k ⭐)</span>
+            <span>5. MOON EPIC Fondi ({MOON_EPIC_ITEMS.length} ta · 560k ⭐)</span>
+          </button>
+          <button
+            onClick={() => setSourceFilter('crafted')}
+            className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
+              sourceFilter === 'crafted'
+                ? 'bg-gradient-to-r from-amber-400 to-rose-500 text-slate-950 shadow-md'
+                : 'ios-glass-subtle text-amber-300 hover:text-white border border-amber-400/30'
+            }`}
+          >
+            <span>⚒️ Craft NFTlar ({craftedItems.length} ta · 1,250+ ⭐)</span>
           </button>
           <button
             onClick={() => setSourceFilter('calendars')}
@@ -468,18 +481,25 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   </div>
                 )}
 
-                {/* Top Row: Rarity & Number */}
+                {/* Top Row: Rarity, Craft Badge & Number */}
                 <div className="flex items-center justify-between gap-1 z-10">
-                  <span
-                    className="px-2 py-0.5 rounded-full text-[10px] font-bold"
-                    style={{
-                      backgroundColor: rarity.bgSoft,
-                      color: rarity.color,
-                      border: `1px solid ${rarity.borderSoft}`
-                    }}
-                  >
-                    {rarity.label}
-                  </span>
+                  <div className="flex items-center gap-1">
+                    <span
+                      className="px-2 py-0.5 rounded-full text-[10px] font-bold"
+                      style={{
+                        backgroundColor: rarity.bgSoft,
+                        color: rarity.color,
+                        border: `1px solid ${rarity.borderSoft}`
+                      }}
+                    >
+                      {rarity.label}
+                    </span>
+                    {item.crafted && (
+                      <span className="px-1.5 py-0.5 rounded-full text-[9px] font-extrabold bg-amber-500/25 text-amber-300 border border-amber-400/40">
+                        ⚒️ CRAFT
+                      </span>
+                    )}
+                  </div>
                   <span className="text-xs font-bold text-slate-300">
                     #{item.number}
                   </span>

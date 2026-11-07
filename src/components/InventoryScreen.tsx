@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import { CalendarItem, RARITY_CONFIG } from '../data/cases';
+import {
+  CalendarItem,
+  RARITY_CONFIG,
+  UPGRADE_BOT_PAXTA_URL,
+  openUpgradeBotInPaxta,
+} from '../data/cases';
 import {
   ArrowLeft,
   Search,
@@ -290,12 +295,13 @@ export const InventoryScreen: React.FC<InventoryScreenProps> = ({
               </p>
             </div>
             <a
-              href="https://paxta-gift-upgrade.onrender.com"
+              href={UPGRADE_BOT_PAXTA_URL}
+              onClick={(e) => openUpgradeBotInPaxta(e)}
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 rounded-full bg-purple-500/20 hover:bg-purple-500/30 border border-purple-400/35 text-purple-200 text-xs font-extrabold flex items-center gap-1.5"
             >
-              <span>@UpgradeBot ni ochish</span>
+              <span>@UpgradeBot ni ochish (PaxtaGram)</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </div>

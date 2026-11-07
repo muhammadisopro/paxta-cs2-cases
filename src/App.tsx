@@ -27,7 +27,7 @@ import { AddStarsModal } from './components/AddStarsModal';
 import { RulesScreen } from './components/RulesScreen';
 import { sounds } from './utils/audio';
 
-const STORAGE_KEY = 'paxtabox_state_v6';
+const STORAGE_KEY = 'paxtabox_state_v7';
 
 function getOrCreateUserId(): string {
   try {
@@ -61,11 +61,12 @@ export function App() {
   const cloudHydratedRef = useRef(false);
 
   // User wallet, tickets & loyalty guarantee points (persisted in localStorage & Turso Cloud DB)
-  const [stars, setStars] = useState<number>(saved?.stars ?? 1500);
-  const [tickets, setTickets] = useState<number>(saved?.tickets ?? 1);
-  const [loyaltyPoints, setLoyaltyPoints] = useState<number>(saved?.loyaltyPoints ?? 40);
+  // Every user starts at 0 Stars and tops up their own balance via @CaseBot PaxtaGram Stars
+  const [stars, setStars] = useState<number>(saved?.stars ?? 0);
+  const [tickets, setTickets] = useState<number>(saved?.tickets ?? 0);
+  const [loyaltyPoints, setLoyaltyPoints] = useState<number>(saved?.loyaltyPoints ?? 0);
   const [soundEnabled, setSoundEnabled] = useState<boolean>(true);
-  const [bonusClaimed, setBonusClaimed] = useState<boolean>(saved?.bonusClaimed ?? false);
+  const [bonusClaimed] = useState<boolean>(saved?.bonusClaimed ?? false);
 
   // Navigation & active screens
   const [activeTab, setActiveTab] = useState<'home' | 'cases' | 'inventory' | 'rules'>('home');
@@ -84,7 +85,7 @@ export function App() {
   const [totalOpened, setTotalOpened] = useState<number>(saved?.totalOpened ?? 0);
   const [totalSpent, setTotalSpent] = useState<number>(saved?.totalSpent ?? 0);
   const [totalReturned, setTotalReturned] = useState<number>(saved?.totalReturned ?? 0);
-  const [pityCount, setPityCount] = useState<number>(saved?.pityCount ?? 1);
+  const [pityCount, setPityCount] = useState<number>(saved?.pityCount ?? 0);
   const [recentRewardIds, setRecentRewardIds] = useState<string[]>(saved?.recentRewardIds ?? []);
 
   // Hard Escrow Net Reserve per Case (Tracks net 85% Stars AFTER 15% PaxtaGram commission)
@@ -687,13 +688,7 @@ export function App() {
             onSelectCase={(c) => setSelectedCaseId(c.id)}
             onSelectCalendar={(item) => setInspectItem(item)}
             onClaimBonus={() => {
-              if (!bonusClaimed) {
-                setStars((s) => s + 385);
-                setBonusClaimed(true);
-                sounds.playWin('restricted');
-              } else {
-                setShowAddStars(true);
-              }
+              setShowAddStars(true);
             }}
             onOpenShop={() => setActiveTab('rules')}
           />
