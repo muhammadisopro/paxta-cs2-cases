@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 260" fill="none">
+  <defs>
+    <radialGradient id="cyber-aura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#0284C7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cyber-body" x1="60" y1="50" x2="260" y2="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="40%" stop-color="#0284C7"/>
+      <stop offset="80%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="cyber-lid" x1="50" y1="40" x2="270" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E0F2FE"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+    <linearGradient id="cyber-shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="160" cy="135" r="110" fill="url(#cyber-aura)"/>
+  <ellipse cx="160" cy="222" rx="85" ry="14" fill="#000000" opacity="0.55"/>
+
+  <rect x="72" y="78" width="176" height="130" rx="32" fill="url(#cyber-body)" stroke="#7DD3FC" stroke-width="2"/>
+  <rect x="84" y="92" width="152" height="102" rx="22" fill="#082F49" fill-opacity="0.45" stroke="#7DD3FC" stroke-opacity="0.35" stroke-width="1.5"/>
+
+  <rect x="64" y="52" width="192" height="44" rx="20" fill="url(#cyber-lid)" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="2"/>
+  <rect x="74" y="56" width="172" height="18" rx="9" fill="url(#cyber-shine)"/>
+
+  <rect x="142" y="52" width="36" height="156" rx="8" fill="#E0F2FE" fill-opacity="0.9" stroke="#0284C7" stroke-width="1.5"/>
+
+  <circle cx="160" cy="134" r="28" fill="#0F172A" stroke="#38BDF8" stroke-width="2.5"/>
+  <circle cx="160" cy="134" r="22" fill="url(#cyber-lid)"/>
+  <rect x="150" y="124" width="20" height="20" rx="5" transform="rotate(45 160 134)" fill="#0F172A"/>
+
+  <circle cx="52" cy="80" r="4" fill="#7DD3FC"/>
+  <circle cx="268" cy="95" r="5" fill="#38BDF8"/>
+</svg>

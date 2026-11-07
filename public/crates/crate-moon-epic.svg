@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 260" fill="none">
+  <defs>
+    <radialGradient id="moonAura" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.55"/>
+      <stop offset="50%" stop-color="#F59E0B" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lidTop" x1="60" y1="40" x2="260" y2="115" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4C1D95"/>
+      <stop offset="50%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#311042"/>
+    </linearGradient>
+    <linearGradient id="frontFace" x1="55" y1="95" x2="160" y2="225" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2E1065"/>
+      <stop offset="100%" stop-color="#090D16"/>
+    </linearGradient>
+    <linearGradient id="rightFace" x1="160" y1="95" x2="265" y2="225" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#05070F"/>
+    </linearGradient>
+    <linearGradient id="goldTrim" x1="50" y1="40" x2="270" y2="220" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="45%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cosmic Aura -->
+  <ellipse cx="160" cy="135" rx="135" ry="105" fill="url(#moonAura)"/>
+
+  <!-- Base Shadow -->
+  <ellipse cx="160" cy="226" rx="105" ry="18" fill="#000000" opacity="0.65"/>
+
+  <!-- Isometric Left Front Face -->
+  <polygon points="56,96 160,136 160,224 56,180" fill="url(#frontFace)" stroke="url(#goldTrim)" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Isometric Right Face -->
+  <polygon points="264,96 160,136 160,224 264,180" fill="url(#rightFace)" stroke="url(#goldTrim)" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Isometric Top Lid -->
+  <polygon points="160,54 264,96 160,136 56,96" fill="url(#lidTop)" stroke="url(#goldTrim)" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- Inner Lid Neon Frame -->
+  <polygon points="160,64 244,96 160,126 76,96" fill="none" stroke="#C084FC" stroke-width="1.5" stroke-opacity="0.65"/>
+
+  <!-- Gold Armor Ribs Left -->
+  <line x1="82" y1="106" x2="82" y2="191" stroke="url(#goldTrim)" stroke-width="3"/>
+  <line x1="134" y1="126" x2="134" y2="213" stroke="url(#goldTrim)" stroke-width="3"/>
+
+  <!-- Gold Armor Ribs Right -->
+  <line x1="186" y1="126" x2="186" y2="213" stroke="url(#goldTrim)" stroke-width="3"/>
+  <line x1="238" y1="106" x2="238" y2="191" stroke="url(#goldTrim)" stroke-width="3"/>
+
+  <!-- Center @moon Royal Emblem Shield -->
+  <polygon points="160,108 188,124 188,162 160,180 132,162 132,124" fill="#0F172A" stroke="url(#goldTrim)" stroke-width="3"/>
+  <!-- Golden Crescent Moon inside Shield -->
+  <path d="M167 128 C154 128 145 138 145 149 C145 160 154 169 167 169 C161 165 157 158 157 149 C157 140 161 132 167 128 Z" fill="url(#goldTrim)"/>
+  <circle cx="171" cy="138" r="3" fill="#FEF08A"/>
+  <circle cx="160" cy="88" r="4" fill="#FEF08A"/>
+</svg>

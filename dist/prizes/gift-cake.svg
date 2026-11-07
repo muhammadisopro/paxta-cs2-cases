@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <radialGradient id="cakeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#EC4899" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#BE185D" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cakeBase" x1="40" y1="85" x2="160" y2="165" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F472B6"/>
+      <stop offset="100%" stop-color="#DB2777"/>
+    </linearGradient>
+    <linearGradient id="icingGrad" x1="40" y1="70" x2="160" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FEFCE8"/>
+      <stop offset="100%" stop-color="#FDE047"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="82" fill="url(#cakeGlow)"/>
+  <rect x="46" y="88" width="108" height="72" rx="16" fill="url(#cakeBase)" stroke="#FBCFE8" stroke-width="2.5"/>
+  <path d="M46 102 C58 114 70 92 82 104 C94 116 106 92 118 104 C130 116 142 92 154 102 L154 94 C154 85 147 78 138 78 H62 C53 78 46 85 46 94 Z" fill="url(#icingGrad)"/>
+  <rect x="72" y="52" width="10" height="26" rx="4" fill="#FDE047"/>
+  <rect x="95" y="48" width="10" height="30" rx="4" fill="#38BDF8"/>
+  <rect x="118" y="52" width="10" height="26" rx="4" fill="#FDE047"/>
+  <path d="M77 34 C82 42 82 48 77 50 C72 48 72 42 77 34 Z" fill="#FB923C"/>
+  <path d="M100 28 C106 38 106 44 100 46 C94 44 94 38 100 28 Z" fill="#FBBF24"/>
+  <path d="M123 34 C128 42 128 48 123 50 C118 48 118 42 123 34 Z" fill="#FB923C"/>
+  <rect x="36" y="158" width="128" height="10" rx="5" fill="#FBCFE8"/>
+</svg>

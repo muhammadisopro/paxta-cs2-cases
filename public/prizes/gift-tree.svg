@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <radialGradient id="treeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#059669" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="canopyGrad" x1="40" y1="30" x2="160" y2="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="potGrad" x1="65" y1="135" x2="135" y2="175" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="82" fill="url(#treeGlow)"/>
+  <path d="M88 105 C88 125 84 140 82 145 L118 145 C116 140 112 125 112 105 Z" fill="#92400E"/>
+  <circle cx="100" cy="68" r="38" fill="url(#canopyGrad)"/>
+  <circle cx="68" cy="86" r="28" fill="url(#canopyGrad)"/>
+  <circle cx="132" cy="86" r="28" fill="url(#canopyGrad)"/>
+  <circle cx="85" cy="58" r="10" fill="#FDE047" stroke="#B45309" stroke-width="2"/>
+  <circle cx="118" cy="64" r="10" fill="#FDE047" stroke="#B45309" stroke-width="2"/>
+  <circle cx="66" cy="88" r="9" fill="#FDE047" stroke="#B45309" stroke-width="2"/>
+  <circle cx="134" cy="90" r="9" fill="#FDE047" stroke="#B45309" stroke-width="2"/>
+  <circle cx="100" cy="88" r="11" fill="#FDE047" stroke="#B45309" stroke-width="2"/>
+  <path d="M64 142 H136 L126 174 H74 Z" fill="url(#potGrad)" stroke="#FDE68A" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>

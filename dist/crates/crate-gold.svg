@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 260" fill="none">
+  <defs>
+    <radialGradient id="gold-aura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold-body" x1="60" y1="50" x2="260" y2="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="35%" stop-color="#F59E0B"/>
+      <stop offset="75%" stop-color="#B45309"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+    <linearGradient id="gold-lid" x1="50" y1="40" x2="270" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFBEB"/>
+      <stop offset="45%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="glass-shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Soft Ambient Glow -->
+  <circle cx="160" cy="135" r="110" fill="url(#gold-aura)"/>
+  <ellipse cx="160" cy="222" rx="85" ry="14" fill="#000000" opacity="0.55"/>
+
+  <!-- Main Rounded Squircle Box Body -->
+  <rect x="72" y="78" width="176" height="130" rx="32" fill="url(#gold-body)" stroke="#FDE68A" stroke-width="2"/>
+  
+  <!-- Inner Glass Inset -->
+  <rect x="84" y="92" width="152" height="102" rx="22" fill="#451A03" fill-opacity="0.35" stroke="#FEF08A" stroke-opacity="0.4" stroke-width="1.5"/>
+
+  <!-- Top Rounded Lid -->
+  <rect x="64" y="52" width="192" height="44" rx="20" fill="url(#gold-lid)" stroke="#FFFFFF" stroke-opacity="0.8" stroke-width="2"/>
+  <rect x="74" y="56" width="172" height="18" rx="9" fill="url(#glass-shine)"/>
+
+  <!-- Vertical Luxury Ribbon -->
+  <rect x="142" y="52" width="36" height="156" rx="8" fill="#FFFBEB" fill-opacity="0.9" stroke="#F59E0B" stroke-width="1.5"/>
+
+  <!-- Center Star Badge -->
+  <circle cx="160" cy="134" r="28" fill="#78350F" stroke="#FDE047" stroke-width="2.5"/>
+  <circle cx="160" cy="134" r="22" fill="url(#gold-lid)"/>
+  <path d="M160 119L164.5 128.5L175 130L167.5 137.2L169.3 147.5L160 142.5L150.7 147.5L152.5 137.2L145 130L155.5 128.5L160 119Z" fill="#78350F"/>
+
+  <!-- Sparkle Accents -->
+  <circle cx="52" cy="75" r="4" fill="#FEF08A"/>
+  <circle cx="268" cy="95" r="5" fill="#FEF08A"/>
+  <circle cx="255" cy="50" r="3" fill="#FFFFFF"/>
+</svg>

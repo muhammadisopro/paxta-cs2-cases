@@ -1,0 +1,259 @@
+@import "tailwindcss";
+
+:root {
+  --font-apple: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  background-color: #05070F;
+  color: #F8FAFC;
+  font-family: var(--font-apple);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.11) 0%, transparent 42%),
+    radial-gradient(circle at 82% 18%, rgba(245, 158, 11, 0.10) 0%, transparent 45%),
+    radial-gradient(circle at 50% 65%, rgba(168, 85, 247, 0.08) 0%, transparent 55%),
+    radial-gradient(circle at 85% 88%, rgba(16, 185, 129, 0.08) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* Custom Sleek Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* ========================================================================= */
+/* APPLE iOS 18 / visionOS LIQUID GLASS SURFACES                             */
+/* ========================================================================= */
+.ios-glass {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.085) 0%, rgba(255, 255, 255, 0.03) 100%);
+  backdrop-filter: blur(28px) saturate(185%);
+  -webkit-backdrop-filter: blur(28px) saturate(185%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 20px 45px -15px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.18);
+}
+
+.ios-glass-card {
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.075) 0%, rgba(255, 255, 255, 0.025) 100%);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 26px;
+  box-shadow:
+    0 14px 34px -10px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ios-glass-card:hover {
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.04) 100%);
+  border-color: rgba(255, 255, 255, 0.24);
+  transform: translateY(-4px);
+  box-shadow:
+    0 22px 48px -12px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.26);
+}
+
+.ios-glass-subtle {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.ios-dock {
+  background: rgba(15, 20, 35, 0.78);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.75),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Apple Style Primary Buttons */
+.btn-ios-gold {
+  background: linear-gradient(180deg, #FDE047 0%, #F59E0B 100%);
+  color: #090D16;
+  font-weight: 700;
+  border-radius: 9999px;
+  box-shadow:
+    0 10px 28px -4px rgba(245, 158, 11, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.75);
+  transition: all 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn-ios-gold:hover {
+  transform: translateY(-2px) scale(1.015);
+  box-shadow:
+    0 14px 34px -4px rgba(245, 158, 11, 0.68),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+.btn-ios-gold:active {
+  transform: scale(0.97);
+}
+
+.btn-ios-green {
+  background: linear-gradient(180deg, #34D399 0%, #10B981 100%);
+  color: #04130E;
+  font-weight: 700;
+  border-radius: 9999px;
+  box-shadow:
+    0 10px 28px -4px rgba(16, 185, 129, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.65);
+  transition: all 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn-ios-green:hover {
+  transform: translateY(-2px) scale(1.015);
+  box-shadow:
+    0 14px 34px -4px rgba(16, 185, 129, 0.65),
+    inset 0 1px 1px rgba(255, 255, 255, 0.85);
+}
+.btn-ios-green:active {
+  transform: scale(0.97);
+}
+
+/* ========================================================================= */
+/* PREMIUM KEYFRAME ANIMATIONS (CS2 + iOS 18 SPRING)                         */
+/* ========================================================================= */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float {
+  animation: floatSlow 4.2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes popSpring {
+  0% { opacity: 0; transform: scale(0.75) translateY(16px); }
+  65% { opacity: 1; transform: scale(1.04) translateY(-3px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.animate-pop-spring {
+  animation: popSpring 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes crateUnsealShake {
+  0% { transform: scale(0.9) rotate(0deg); }
+  20% { transform: scale(1.04) rotate(-5deg); }
+  40% { transform: scale(1.08) rotate(5deg); }
+  60% { transform: scale(1.12) rotate(-4deg); }
+  80% { transform: scale(1.16) rotate(4deg); filter: brightness(1.35); }
+  100% { transform: scale(1.24) rotate(0deg); filter: brightness(1.6); }
+}
+.animate-crate-unseal {
+  animation: crateUnsealShake 0.85s cubic-bezier(0.36, 0.07, 0.19, 0.97) forwards;
+}
+
+@keyframes spinSlowRays {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+.animate-rays-spin {
+  animation: spinSlowRays 18s linear infinite;
+}
+
+@keyframes winnerShockwave {
+  0%, 100% { transform: scale(1.07); box-shadow: 0 0 36px rgba(251, 191, 36, 0.75), inset 0 0 18px rgba(251, 191, 36, 0.45); }
+  50% { transform: scale(1.12); box-shadow: 0 0 58px rgba(52, 211, 153, 0.9), inset 0 0 24px rgba(255, 255, 255, 0.55); }
+}
+.animate-winner-lock {
+  animation: winnerShockwave 0.55s ease-in-out infinite;
+}
+
+@keyframes orbitFloatA {
+  0%, 100% { transform: translate(0px, 0px) rotate(-4deg); }
+  50% { transform: translate(-4px, -9px) rotate(-1deg); }
+}
+@keyframes orbitFloatB {
+  0%, 100% { transform: translate(0px, 0px) rotate(4deg); }
+  50% { transform: translate(4px, -9px) rotate(7deg); }
+}
+.anim-orbit-a { animation: orbitFloatA 4.5s ease-in-out infinite; }
+.anim-orbit-b { animation: orbitFloatB 4.0s ease-in-out infinite; }
+
+/* Rarity Bottom Accent Bars */
+.rarity-bar-mil-spec { border-bottom: 3px solid #38BDF8 !important; }
+.rarity-bar-restricted { border-bottom: 3px solid #A855F7 !important; }
+.rarity-bar-classified { border-bottom: 3px solid #EC4899 !important; }
+.rarity-bar-covert { border-bottom: 3px solid #F43F5E !important; }
+.rarity-bar-special { border-bottom: 3px solid #FBBF24 !important; }
+
+/* Roulette Track */
+.roulette-stage {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.72) 0%, rgba(7, 11, 24, 0.94) 100%);
+  backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 28px 70px -15px rgba(0, 0, 0, 0.85),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.22);
+}
+
+.roulette-indicator {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #FEF08A 0%, #F59E0B 50%, #FEF08A 100%);
+  box-shadow: 0 0 18px #F59E0B, 0 0 32px rgba(245, 158, 11, 0.9);
+  z-index: 30;
+  pointer-events: none;
+}
+
+.roulette-indicator::before,
+.roulette-indicator::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: #FBBF24;
+  border-radius: 4px;
+  box-shadow: 0 0 12px #F59E0B;
+}
+.roulette-indicator::before {
+  top: -7px;
+  transform: translateX(-50%) rotate(45deg);
+}
+.roulette-indicator::after {
+  bottom: -7px;
+  transform: translateX(-50%) rotate(45deg);
+}

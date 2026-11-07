@@ -1,0 +1,15 @@
+{
+  "invoices": {
+    "bfa9d8a56e32": {
+      "nonce": "bfa9d8a56e32",
+      "slug": "PpmjuquELsFEtGz9lUwv",
+      "amount": 385,
+      "invoiceLink": "https://paxta.online/invoice/PpmjuquELsFEtGz9lUwv",
+      "webInvoiceUrl": "https://paxta.online/?invoice=PpmjuquELsFEtGz9lUwv",
+      "status": "pending",
+      "createdAt": "2026-11-07T13:06:38.568Z"
+    }
+  },
+  "charges": {},
+  "lastUpdateId": 84128
+}

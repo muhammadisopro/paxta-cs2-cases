@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <radialGradient id="mapleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#EA580C" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mapleGrad" x1="30" y1="25" x2="170" y2="175" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="45%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#DC2626"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="82" fill="url(#mapleGlow)"/>
+  <path d="M100 24 L114 62 L146 46 L134 80 L168 88 L138 112 L148 136 L114 130 L104 172 L96 172 L86 130 L52 136 L62 112 L32 88 L66 80 L54 46 L86 62 Z" fill="url(#mapleGrad)" stroke="#FEF08A" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M100 52 L100 165 M100 105 L130 82 M100 118 L70 92" stroke="#FEF08A" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+</svg>

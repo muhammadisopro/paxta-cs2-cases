@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 260" fill="none">
+  <defs>
+    <radialGradient id="spring-aura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34D399" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#059669" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="spring-body" x1="60" y1="50" x2="260" y2="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6EE7B7"/>
+      <stop offset="40%" stop-color="#10B981"/>
+      <stop offset="80%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#064E3B"/>
+    </linearGradient>
+    <linearGradient id="spring-lid" x1="50" y1="40" x2="270" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ECFDF5"/>
+      <stop offset="50%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="spring-shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="160" cy="135" r="110" fill="url(#spring-aura)"/>
+  <ellipse cx="160" cy="222" rx="85" ry="14" fill="#000000" opacity="0.55"/>
+
+  <rect x="72" y="78" width="176" height="130" rx="32" fill="url(#spring-body)" stroke="#A7F3D0" stroke-width="2"/>
+  <rect x="84" y="92" width="152" height="102" rx="22" fill="#064E3B" fill-opacity="0.45" stroke="#A7F3D0" stroke-opacity="0.35" stroke-width="1.5"/>
+
+  <rect x="64" y="52" width="192" height="44" rx="20" fill="url(#spring-lid)" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="2"/>
+  <rect x="74" y="56" width="172" height="18" rx="9" fill="url(#spring-shine)"/>
+
+  <rect x="142" y="52" width="36" height="156" rx="8" fill="#ECFDF5" fill-opacity="0.9" stroke="#059669" stroke-width="1.5"/>
+
+  <circle cx="160" cy="134" r="28" fill="#064E3B" stroke="#34D399" stroke-width="2.5"/>
+  <circle cx="160" cy="134" r="22" fill="url(#spring-lid)"/>
+  <circle cx="160" cy="134" r="8" fill="#064E3B"/>
+
+  <circle cx="52" cy="80" r="4" fill="#A7F3D0"/>
+  <circle cx="268" cy="95" r="5" fill="#34D399"/>
+</svg>
