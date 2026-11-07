@@ -57,6 +57,11 @@ export const ItemDetailModal: React.FC<ItemDetailModalProps> = ({
                 ⚒️ CRAFT (Maxsus Yasama NFT)
               </span>
             )}
+            {item.isBlackBackdrop && (
+              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-extrabold bg-black/85 text-white border border-white/45">
+                🖤 {item.backdrop.toUpperCase()} FON (O‘ta Noyob)
+              </span>
+            )}
           </div>
 
           <div

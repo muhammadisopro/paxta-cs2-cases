@@ -18,18 +18,18 @@ const PACKAGES = [
     amount: 575,
     label: "Oltin Qirollik Paketi (500 + 15%)",
     bonus: "VIP Oltin Qirollik qutisini ochish uchun",
-    popular: true,
-  },
-  {
-    amount: 1560,
-    label: "3x Quti Kombo Paketi",
-    bonus: "Ketma-ket 3-4 marta quti ochish uchun",
     popular: false,
   },
   {
-    amount: 2875,
-    label: "5x VIP Qirollik Paketi",
-    bonus: "Kafolatli NFT shkalasini to'liq yopish uchun",
+    amount: 2000,
+    label: "👑 MOON EPIC CASE Paketi (2,000 ⭐)",
+    bonus: "MOON EPIC qutisini ochish uchun (45% NFT ehtimoli)",
+    popular: true,
+  },
+  {
+    amount: 4000,
+    label: "🔥 2x MOON EPIC Mega Paketi",
+    bonus: "MOON EPIC qutisini ketma-ket 2 marta ochish uchun",
     popular: false,
   },
 ];

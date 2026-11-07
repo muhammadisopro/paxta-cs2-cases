@@ -349,19 +349,19 @@ export const AdminModal: React.FC<AdminModalProps> = ({ initialAdminKey = '', on
           </span>
           <div className="flex flex-wrap items-center gap-2 text-xs font-bold">
             <span className="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-400/30">
-              1. Sakura: ⭐ {reserves['kawaii-spring'] ?? 700}
+              1. Sakura: ⭐ {reserves['kawaii-spring'] ?? 0}
             </span>
             <span className="px-3 py-1 rounded-full bg-pink-500/15 text-pink-300 border border-pink-400/30">
-              2. Mayami: ⭐ {reserves['neon-miami'] ?? 750}
+              2. Mayami: ⭐ {reserves['neon-miami'] ?? 0}
             </span>
             <span className="px-3 py-1 rounded-full bg-sky-500/15 text-sky-300 border border-sky-400/30">
-              3. Kiber: ⭐ {reserves['cyber-matrix'] ?? 800}
+              3. Kiber: ⭐ {reserves['cyber-matrix'] ?? 0}
             </span>
             <span className="px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 border border-amber-400/30">
-              4. Oltin: ⭐ {reserves['golden-royale'] ?? 850}
+              4. Oltin: ⭐ {reserves['golden-royale'] ?? 0}
             </span>
             <span className="px-3 py-1 rounded-full bg-purple-500/25 text-purple-200 border border-purple-400/40">
-              👑 5. MOON EPIC: ⭐ {reserves['moon-epic-case'] ?? 900}
+              👑 5. MOON EPIC: ⭐ {reserves['moon-epic-case'] ?? 0}
             </span>
           </div>
         </div>

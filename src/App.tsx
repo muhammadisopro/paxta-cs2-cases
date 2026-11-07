@@ -118,14 +118,14 @@ export function App() {
   const [recentRewardIds, setRecentRewardIds] = useState<string[]>(saved?.recentRewardIds ?? []);
 
   // Hard Escrow Net Reserve per Case (Tracks net 85% Stars AFTER 15% PaxtaGram commission)
-  // Note: 'moon-epic-case' maintains its own separate accounting pool!
+  // Starts at 0 Stars — no free reserve head-start!
   const [casePoolReserves, setCasePoolReserves] = useState<Record<string, number>>(
     saved?.casePoolReserves ?? {
-      'kawaii-spring': 700,
-      'neon-miami': 750,
-      'cyber-matrix': 800,
-      'golden-royale': 850,
-      'moon-epic-case': 900,
+      'kawaii-spring': 0,
+      'neon-miami': 0,
+      'cyber-matrix': 0,
+      'golden-royale': 0,
+      'moon-epic-case': 0,
     }
   );
 
@@ -295,19 +295,22 @@ export function App() {
     const isEscrowFunded = eligibleNftRewards.length > 0;
     const roll = Math.random() * 100;
 
-    // For MOON EPIC CASE, allow the reserve to sometimes accumulate toward higher-tier items
-    // while still dropping NFTs generously when funded
+    // Strict Hard Escrow Check: no artificial multiplier, and Black / Onyx / Craft / Grails
+    // are heavily weighted toward the top of the reserve curve so they drop rarely!
     const shouldDropNft =
       isEscrowFunded &&
       (caseDef.isMoonEpic
-        ? roll < caseDef.nftDropChance * 1.45
-        : roll < caseDef.nftDropChance * 1.65 || updatedReserve >= caseDef.targetNetPerNft * 1.12);
+        ? roll < caseDef.nftDropChance
+        : roll < caseDef.nftDropChance || updatedReserve >= caseDef.targetNetPerNft * 1.6);
 
     if (shouldDropNft) {
-      // Weight toward the highest-tier unlocked items when the reserve has grown large
+      // Weight strongly toward entry-tier items first (power curve 2.4) so Black/Onyx/Craft/Grail items are extra hard to pull!
       const sortedEligible = [...eligibleNftRewards].sort((a, b) => a.value - b.value);
-      const chosenNftReward =
-        sortedEligible[Math.floor(Math.random() * sortedEligible.length)];
+      const weightedIdx = Math.min(
+        sortedEligible.length - 1,
+        Math.floor(Math.pow(Math.random(), 2.4) * sortedEligible.length)
+      );
+      const chosenNftReward = sortedEligible[weightedIdx];
       const deductAmount =
         chosenNftReward.calendarItem?.requiredReserve || caseDef.targetNetPerNft;
 
@@ -378,7 +381,7 @@ export function App() {
 
     setLoyaltyPoints((p) => p + earnedPoints);
 
-    const currentReserve = casePoolReserves[caseDef.id] ?? 600;
+    const currentReserve = casePoolReserves[caseDef.id] ?? 0;
     const { winner, nextReserve, nextPity } = pickWinningReward(
       caseDef,
       paidStars,

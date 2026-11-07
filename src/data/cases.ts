@@ -21,6 +21,7 @@ export interface CalendarItem {
   link: string;
   crafted?: boolean;
   craftedBurnedStars?: number;
+  isBlackBackdrop?: boolean;
   tradeLockedUntil?: string | null;
   rarity: 'mil-spec' | 'restricted' | 'classified' | 'covert' | 'special';
   value: number; // Market / Collector Value in Stars
@@ -54,14 +55,24 @@ export function openUpgradeBotInPaxta(e?: { preventDefault?: () => void }) {
 
 // 1. 128 Desk Calendar NFTs from Channels 2000001271 & 2000001272
 export const ALL_CALENDARS: CalendarItem[] = (allCalendarsData as any[]).map((item) => {
+  const bgLower = String(item.backdrop || '').toLowerCase();
+  const isBlack = bgLower === 'black' || bgLower === 'onyx black';
   let marketValue = item.value;
   let buyback = 350;
+  let reqReserve: number | undefined = undefined;
+
   if (item.number < 100) {
     marketValue = 5000;
     buyback = 1400;
+    reqReserve = 3800;
+  } else if (isBlack) {
+    marketValue = 4800;
+    buyback = 1200;
+    reqReserve = 3600;
   } else if (item.number <= 110) {
     marketValue = 2500;
     buyback = 850;
+    reqReserve = 2400;
   } else if (item.number <= 130) {
     marketValue = 1600;
     buyback = 600;
@@ -79,44 +90,54 @@ export const ALL_CALENDARS: CalendarItem[] = (allCalendarsData as any[]).map((it
     ...item,
     slug: item.slug || 'DeskCalendar',
     title: item.title || 'Desk Calendar',
+    isBlackBackdrop: isBlack,
+    rarity: isBlack ? 'covert' : item.rarity,
     value: marketValue,
     buybackStars: buyback,
+    requiredReserve: reqReserve,
   };
 });
 
 // 2. 71 Exclusive NFTs from @moon Personal Profile (Strictly excluding the 4 protected NFTs!)
 // Each item has a strict `requiredReserve` in the separate `moon-epic-case` escrow pool
-// so total net profit across all 71 items exceeds +335,000 Stars with 0% risk of early grail loss!
+// Black & Onyx Black backdrops and Crafted items have extra-high reserve locks!
 export const MOON_EPIC_ITEMS: CalendarItem[] = (moonEpicItemsData as any[]).map((item) => {
   const val = Number(item.value) || 1000;
   const isCrafted = Boolean(item.crafted);
-  let reqReserve = 1450;
+  const bgLower = String(item.backdrop || '').toLowerCase();
+  const isBlack = Boolean(item.isBlackBackdrop) || bgLower === 'black' || bgLower === 'onyx black';
+
+  let reqReserve = 3400;
   if (val >= 40000) {
     // Heart Locket #8 (45k) & Resistance Dog #30 (86k)
-    reqReserve = Math.round(val * 0.82);
+    reqReserve = Math.round(val * 0.92);
   } else if (val >= 20000) {
-    // Scared Cat #20 (33.3k), Scared Cat #10 (28k), Scared Cat #99 (22k), Precious Peach #9 (20k)
-    reqReserve = Math.round(val * 0.78);
+    // Scared Cat #20 (33.3k), Scared Cat #10 (28k), Scared Cat #99 Black (32k), Precious Peach #9 (20k)
+    reqReserve = Math.round(val * 0.90);
   } else if (val >= 10000) {
-    // Mask #5, #99, #100, Scared Cat #35, Precious Peach #36, #90, #179
-    reqReserve = Math.round(val * 0.72);
+    // Mask #5, #99, #100, Mask #307 Black (12.5k), Scared Cat #35, Precious Peach #36, #90, #179
+    reqReserve = Math.round(val * 0.88);
+  } else if (isBlack) {
+    // All Black / Onyx Black backdrop items (StarNotepad-433 Onyx Black, DeskCalendar-412 Onyx Black, BDayCandle-225 Black, LolPop-646 Black)
+    reqReserve = Math.max(7500, Math.round(val * 1.25));
   } else if (val >= 5000) {
     // Masks & Precious Peaches & 1-Digit Crafted Desk Calendars (#5, #6, #10, #99)
-    reqReserve = Math.max(3800, Math.round(val * 0.68));
-  } else if (val >= 1500) {
-    // Star Notepads & Low-Number Crafted Calendars (#30, #33, #54)
-    reqReserve = 2400;
-  } else if (isCrafted) {
-    // Crafted Desk Calendars (#293 Daily Bread, #410 Anno Domini, #411 Hermes, #414 Mesozoic — 1,250–1,450 ⭐)
-    reqReserve = 2150;
+    reqReserve = Math.max(6800, Math.round(val * 0.88));
+  } else if (val >= 3000) {
+    // Low-Number Crafted Calendars (#30, #33, #54) & Mask-275
+    reqReserve = 5600;
+  } else if (isCrafted || val >= 1200) {
+    // Crafted Desk Calendars (#293 Daily Bread, #410 Anno Domini, #411 Hermes, #414 Mesozoic) & Star Notepads
+    reqReserve = 4800;
   } else {
-    // Lol Pop & B-Day Candle & Standard Profile Calendars
-    reqReserve = 1450;
+    // Standard Lol Pop & B-Day Candle (minimum 2 full spins = 3,400 ⭐ net reserve!)
+    reqReserve = 3400;
   }
 
   return {
     ...item,
     crafted: isCrafted,
+    isBlackBackdrop: isBlack,
     requiredReserve: reqReserve,
   };
 });
@@ -338,7 +359,7 @@ export const CASES: CaseDefinition[] = [
     price: 385,
     netAfterPaxtaFee: 327,
     nftDropChance: 19,
-    targetNetPerNft: 1320,
+    targetNetPerNft: 1550,
     pityLimit: 5,
     color: '#10B981',
     accentGlow: 'rgba(16, 185, 129, 0.35)',
@@ -374,7 +395,7 @@ export const CASES: CaseDefinition[] = [
     price: 460,
     netAfterPaxtaFee: 391,
     nftDropChance: 23,
-    targetNetPerNft: 1360,
+    targetNetPerNft: 1650,
     pityLimit: 5,
     color: '#EC4899',
     accentGlow: 'rgba(236, 72, 153, 0.35)',
@@ -411,7 +432,7 @@ export const CASES: CaseDefinition[] = [
     price: 520,
     netAfterPaxtaFee: 442,
     nftDropChance: 27,
-    targetNetPerNft: 1420,
+    targetNetPerNft: 1750,
     pityLimit: 4,
     color: '#38BDF8',
     accentGlow: 'rgba(56, 189, 248, 0.35)',
@@ -447,7 +468,7 @@ export const CASES: CaseDefinition[] = [
     price: 575,
     netAfterPaxtaFee: 489,
     nftDropChance: 32,
-    targetNetPerNft: 1480,
+    targetNetPerNft: 1850,
     pityLimit: 4,
     color: '#F59E0B',
     accentGlow: 'rgba(245, 158, 11, 0.35)',
@@ -477,39 +498,39 @@ export const CASES: CaseDefinition[] = [
   {
     id: 'moon-epic-case',
     name: '5. MOON EPIC CASE',
-    subtitle: '@moon Shaxsiy Fondi: Heart Locket #8, Resistance Dog #30, Scared Cat #10/#20',
-    tag: '👑 MOON EPIC · 556,000+ ⭐ FOND',
+    subtitle: '@moon Shaxsiy Fondi: Heart Locket #8, Resistance Dog #30, Scared Cat #10/#20 (45% NFT Ehtimoli)',
+    tag: '👑 MOON EPIC · 585,000+ ⭐ FOND',
     isMoonEpic: true,
-    basePrice: 860,
-    price: 990,
-    netAfterPaxtaFee: 842,
-    nftDropChance: 38,
-    targetNetPerNft: 1450, // Entry tier unlock; high-tier grails use their individual `requiredReserve`!
+    basePrice: 1740,
+    price: 2000,
+    netAfterPaxtaFee: 1700,
+    nftDropChance: 45,
+    targetNetPerNft: 3400, // Strict minimum 2 spins reserve; Black/Onyx/Craft/Grails require 4,800–79,000 ⭐!
     pityLimit: 3,
     color: '#A855F7',
     accentGlow: 'rgba(168, 85, 247, 0.45)',
     crateImage: '/crates/crate-moon-epic.svg',
     description:
-      `@moon shaxsiy kolleksiyasidagi 71 ta super-noyob aktivlar qutisi (860 ⭐ + 15% = 990 ⭐)! Ichida Resistance Dog #30 (86k ⭐), Heart Locket #8 (45k ⭐), Scared Cat #20 (33k ⭐), #10 (28k ⭐), Precious Peach #9 (20k ⭐), Mask #5, Desk Calendar #5, #6, #10 hamda 1,000–2,500 ⭐ @UpgradeBot VIP promokodlar bor!`,
+      `@moon shaxsiy kolleksiyasidagi 71 ta super-noyob aktivlar qutisi (⭐ 2,000)! Yuqori 45% NFT tushish ehtimoli! Ichida Resistance Dog #30 (86k ⭐), Heart Locket #8 (45k ⭐), Scared Cat #20 (33k ⭐), #99 Black (32k ⭐), #10 (28k ⭐), Precious Peach #9 (20k ⭐), Mask #5, Desk Calendar #5, #6, #10 hamda 1,200–2,500 ⭐ @UpgradeBot VIP promokodlar bor!`,
     dropRates: {
-      milSpec: 18.0,
-      restricted: 28.0,
-      classified: 28.0,
-      covert: 17.0,
-      special: 9.0,
+      milSpec: 14.0,
+      restricted: 25.0,
+      classified: 30.0,
+      covert: 20.0,
+      special: 11.0,
     },
     nftItems: MOON_EPIC_ITEMS,
     allRewards: [
       ...MOON_EPIC_ITEMS.map(nftToReward),
-      createPromoReward('epic-p1000', 1000, 'restricted', '1,000 ⭐ @UpgradeBot VIP Kod', '1-martalik shaxsiy kod (1,000 ⭐)'),
-      createPromoReward('epic-p1500', 1500, 'classified', '1,500 ⭐ @UpgradeBot Royal Kod', '1-martalik shaxsiy kod (1,500 ⭐)'),
+      createPromoReward('epic-p1200', 1200, 'restricted', '1,200 ⭐ @UpgradeBot VIP Kod', '1-martalik shaxsiy kod (1,200 ⭐)'),
+      createPromoReward('epic-p1800', 1800, 'classified', '1,800 ⭐ @UpgradeBot Royal Kod', '1-martalik shaxsiy kod (1,800 ⭐)'),
       createPromoReward('epic-p2500', 2500, 'covert', '2,500 ⭐ @UpgradeBot Epic Kod', '1-martalik Mega kod (2,500 ⭐)'),
-      createPromoReward('epic-pgift', 1000, 'classified', 'ImperialCrown NFT Promokod', '@UpgradeBot da Crown sovg‘a beradi', 'gift', 'imperialcrown'),
+      createPromoReward('epic-pgift', 1500, 'classified', 'ImperialCrown NFT Promokod', '@UpgradeBot da Crown sovg‘a beradi', 'gift', 'imperialcrown'),
       createPaxtaGiftReward('epic-tree', 2, 'Money Tree', 75, '/prizes/gift-tree.svg', 'restricted', 'Boylik Daraxti (Money Tree)', '@moon orqali darhol profilga Gift'),
       createPaxtaGiftReward('epic-cake', 6, 'Cake', 100, '/prizes/gift-cake.svg', 'classified', 'Bayram Torti (Cake Gift)', '@moon orqali darhol profilga Gift'),
-      createStarsReward('epic-s180', 180, 'mil-spec', 'Kosmik Keshbek (+180 ⭐)', 'Ichki balans keshbeki'),
-      createStarsReward('epic-s260', 260, 'restricted', 'Moon Kristall (+260 ⭐)', 'Ichki balans keshbeki'),
-      createTicketReward('epic-t1', 1, 990, 'covert', 'Moon Epic Chiptasi (1x)', '990 ⭐ lik qutini bepul ochish'),
+      createStarsReward('epic-s350', 350, 'mil-spec', 'Kosmik Keshbek (+350 ⭐)', 'Ichki balans keshbeki'),
+      createStarsReward('epic-s500', 500, 'restricted', 'Moon Kristall (+500 ⭐)', 'Ichki balans keshbeki'),
+      createTicketReward('epic-t1', 1, 2000, 'covert', 'Moon Epic Chiptasi (1x)', '2,000 ⭐ lik qutini bepul ochish'),
     ],
   },
 ];

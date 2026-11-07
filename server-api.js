@@ -724,7 +724,10 @@ export function createApiMiddleware() {
           );
           appState.globalPool.claimedNftIds = mergedIds;
         }
+        const prevOpened = Number(appState.users[userId]?.totalOpened) || 0;
+        const nextOpened = Number(body.userProfile?.totalOpened) || 0;
         if (
+          nextOpened > prevOpened &&
           body.globalPool.casePoolReserves &&
           typeof body.globalPool.casePoolReserves === 'object'
         ) {

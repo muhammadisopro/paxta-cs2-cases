@@ -499,6 +499,11 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                         ⚒️ CRAFT
                       </span>
                     )}
+                    {item.isBlackBackdrop && (
+                      <span className="px-1.5 py-0.5 rounded-full text-[9px] font-extrabold bg-black/80 text-white border border-white/40">
+                        🖤 BLACK
+                      </span>
+                    )}
                   </div>
                   <span className="text-xs font-bold text-slate-300">
                     #{item.number}

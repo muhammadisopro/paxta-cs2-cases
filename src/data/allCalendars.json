@@ -2594,9 +2594,10 @@
     "image": "/calendars/cal-attr-3637.png",
     "link": "https://paxta.online/nft/DeskCalendar-1038",
     "tradeLockedUntil": "2026-11-09T10:58:18+00:00",
-    "rarity": "classified",
-    "value": 1100,
-    "crafted": false
+    "rarity": "covert",
+    "value": 4800,
+    "crafted": false,
+    "isBlackBackdrop": true
   },
   {
     "id": "calendar-1041",
